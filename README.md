@@ -2,7 +2,6 @@
 
 Research on whether available US futures information improves forecasts of Chinese commodity **portfolio returns**, rather than a single futures contract.
 
-**Author:** Zi (Winston) Wang · **NetID:** ziw5  
 **Course:** IE498MLF, Fall 2026 · **Updated:** October 15, 2026  
 **Repository:** https://github.com/winztonfas/uiuc_commodity_research
 
