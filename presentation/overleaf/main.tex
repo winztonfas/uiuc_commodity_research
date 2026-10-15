@@ -1,0 +1,617 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% Editable Overleaf source. Compile with pdfLaTeX.
+% Main talk: 14 slides. Everything after \appendix is backup material.
+% The separately required written report is not replaced by these slides.
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+% ---------- Edit personal information here ----------
+\newcommand{\StudentName}{Zi (Winston) Wang}
+\newcommand{\StudentNetID}{ziw5}
+\newcommand{\PresentationDate}{October 15, 2026}
+\newcommand{\RepositoryURL}{https://github.com/winztonfas/uiuc_commodity_research}
+\title[US--China Commodity Prediction]{Predictive Information Across\\US and Chinese Commodity Futures}
+\subtitle{Adaptive Cluster Portfolios and Machine Learning}
+\author[Zi Wang]{\StudentName\\[3pt]\small NetID: \StudentNetID}
+\institute{IE498MLF\\University of Illinois Urbana-Champaign}
+\date{\PresentationDate}
+
+% ---------- Style ----------
+\definecolor{IllinoisNavy}{HTML}{13294B}
+\definecolor{IllinoisOrange}{HTML}{E84A27}
+\definecolor{MutedGray}{HTML}{5D6673}
+\usetheme{default}
+\setbeamercolor{normal text}{fg=IllinoisNavy,bg=white}
+\setbeamercolor{title}{fg=IllinoisNavy}
+\setbeamercolor{frametitle}{fg=IllinoisNavy}
+\setbeamercolor{structure}{fg=IllinoisOrange}
+\setbeamercolor{alerted text}{fg=IllinoisOrange}
+\setbeamercolor{footline}{fg=MutedGray}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{subtitle}{size=\large}
+\setbeamerfont{footline}{size=\scriptsize}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\small$\bullet$}
+\setbeamertemplate{itemize subitem}{\tiny$\bullet$}
+\setbeamersize{text margin left=0.65cm,text margin right=0.65cm}
+\renewcommand{\arraystretch}{1.15}
+\newif\ifbackup
+\backupfalse
+\setbeamertemplate{footline}{%
+  \leavevmode\hbox{%
+    \begin{beamercolorbox}[wd=.76\paperwidth,ht=2.6ex,dp=1.3ex,leftskip=.65cm]{footline}%
+    IE498MLF\hspace{0.8em}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.24\paperwidth,ht=2.6ex,dp=1.3ex,rightskip=.65cm]{footline}%
+    \hfill\ifbackup Appendix \insertframenumber\else\insertframenumber/14\fi
+    \end{beamercolorbox}%
+  }%
+}
+
+% ---------- Figure helper ----------
+% Upload figures to figures/ with the exact names used below.
+% A placeholder appears if a figure has not been uploaded yet.
+\newcommand{\projectfigure}[2]{%
+\begin{center}
+\IfFileExists{figures/#1}{%
+  \includegraphics[width=\linewidth,height=#2,keepaspectratio]{figures/#1}%
+}{%
+  \IfFileExists{#1}{%
+    \includegraphics[width=\linewidth,height=#2,keepaspectratio]{#1}%
+  }{%
+    \fbox{\parbox[c][#2][c]{0.91\linewidth}{\centering
+      \textbf{Upload figure}\\[7pt]\texttt{\detokenize{#1}}\\[7pt]
+      \small Place the image in the figures folder.}}%
+  }%
+}
+\end{center}}
+\newcommand{\smallnote}[1]{\par\vspace{3pt}{\scriptsize\color{MutedGray}#1\par}}
+
+\begin{document}
+
+% ============================================================
+% 1. COVER
+% ============================================================
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Introduction / Exploratory Data Analysis}
+
+% 2. RESEARCH OBJECTIVE
+\begin{frame}{Research objective}
+\large
+Does information from US commodity futures improve forecasts
+of Chinese commodity portfolio returns?
+\vspace{0.4cm}
+\normalsize
+\begin{itemize}
+\item Study \textbf{groups of related commodities}, rather than a single futures contract.
+\item Construct portfolios whose membership can adapt as historical relationships change.
+\item Compare \textbf{domestic-only} models with models that also use US information.
+\end{itemize}
+\vspace{0.2cm}
+\[
+\underbrace{\text{Chinese features}}_{\text{historical}}
++\underbrace{\text{US information}}_{\text{available at cutoff}}
+\longrightarrow \text{next Chinese portfolio return}
+\]
+\smallnote{Forecast improvement represents predictive information. It does not establish a causal spillover.}
+\note{The motivation is cross-market co-movement. The test is whether US information adds out-of-sample value after controlling for domestic information.}
+\end{frame}
+
+% 3. DATA
+\begin{frame}{Data and research universe}
+\small
+\begin{tabularx}{\linewidth}{p{2.5cm}XX}
+\toprule
+& \textbf{China} & \textbf{United States}\\\midrule
+Source & Tushare daily futures data & Databento, CME Globex OHLCV\\
+Research window & October 2021--September 2026 & October 2021--September 2026\\
+Configured products & 23 & 16\\
+Selected-contract rows & 25,843 & 22,251\\
+Main fields & OHLC, volume, turnover, open interest & OHLC and volume\\
+Date convention & Chinese trading-day labels & UTC calendar-day bars\\\bottomrule
+\end{tabularx}
+\vspace{0.2cm}
+\begin{itemize}
+\item Initial sectors: \textbf{metals, energy, agriculture}.
+\item Adaptive portfolio anchors: \textbf{gold, copper, crude oil, soybeans}.
+\item Chinese wheat remains unavailable because the candidate contracts are illiquid.
+\end{itemize}
+\smallnote{Counts refer to the configured universe in the research window. First observed selected-contract dates are October 8, 2021 for China and October 3, 2021 for the US. Returns remain in each market's local price currency.}
+\note{The Chinese source also stores settlement fields, but this experiment uses close-based returns. Counts are selected product-date rows, not raw expiry contracts.}
+\end{frame}
+
+% 4. EDA
+\begin{frame}{Exploratory return distributions}
+\projectfigure{sector_return_boxplot.png}{4.4cm}
+\small
+\begin{itemize}
+\item Energy displays relatively large return dispersion and extreme observations.
+\item Return distributions differ across sectors and markets.
+\item Calendar-date comparisons do not establish a tradable lead--lag relationship.
+\end{itemize}
+\note{Equal-weight sector baskets are transparent descriptive benchmarks. Constituent availability and market calendars differ.}
+\end{frame}
+
+\section{Preprocessing, Feature Extraction, Feature Selection}
+
+% 5. PREPROCESSING AND AVAILABILITY
+\begin{frame}{Preprocessing and information availability}
+\small
+\begin{itemize}
+\item Construct product returns without treating price jumps between different expiries as returns.
+\item Compound US metals weekend returns into Monday. Preserve genuine weekday gaps.
+\item Descriptive US copper index: exclude missing members and renormalize available weights.
+\item ML targets: \textbf{freeze Chinese contracts and weights at the forecast cutoff}.
+\end{itemize}
+\vspace{0.1cm}
+\textbf{Example: forecasting Monday's full Chinese trading-day return}
+\vspace{0.08cm}
+\begin{tabularx}{\linewidth}{p{3.5cm}X}
+\toprule
+Forecast cutoff & Previous Friday, 15:00 China time\\
+Target interval & Friday close to Monday close\\
+Latest US daily bar & Normally Thursday UTC, complete Friday morning\\
+Chinese daily fields & Available according to an assumed publication delay\\\bottomrule
+\end{tabularx}
+\smallnote{Defaults: Chinese fields become available 24 hours after close. US bars become available 5 minutes after their UTC interval ends. These are assumptions, not measured arrival timestamps.}
+\note{Monday's bar can include Friday night. Completed US Friday information therefore overlaps the full Monday target. The China publication-delay assumption introduces additional lag.}
+\end{frame}
+
+% 6. CLUSTERS
+\begin{frame}{Adaptive cluster portfolios}
+\small
+\[d_{ij}=\sqrt{\frac{1-\rho_{ij}}{2}}\]
+\begin{itemize}
+\item Estimate correlations using \textbf{52 completed historical weekly returns}.
+\item Use \textbf{average linkage} and distance cut \textbf{0.46}.
+\item Retain clusters with at least two products and estimate \textbf{HRP weights monthly}.
+\item Singleton anchor: retain previous eligible members and re-estimate their HRP weights.
+\end{itemize}
+\projectfigure{anchor_cluster_indexes.png}{2.95cm}
+\smallnote{Red triangles mark singleton fallback starts. Blue triangles mark effective constituent changes. Local clusters need not match exposures exactly. The ML target additionally enforces cutoff-known weights and contracts.}
+\note{Weekly returns are compounded daily returns, not average weekly prices. Historical warmup explains the late start of adaptive portfolios.}
+\end{frame}
+
+% 7. FEATURES
+\begin{frame}{Feature construction: 39 candidate predictors}
+\small
+\begin{tabularx}{\linewidth}{Xp{4.2cm}rr}
+\toprule
+\textbf{Feature family}&\textbf{History / definition}&\textbf{China}&\textbf{US}\\\midrule
+Returns, momentum, volatility, shock & Latest/previous returns; 5- and 20-observation windows &8&8\\
+Normalized volume & Prior 20-observation mean and maximum &3&3\\
+Normalized turnover & Prior 20-observation mean and maximum &3&0\\
+Open interest & 1- and 5-observation changes; return interaction &3&0\\
+Positive-return breadth & Fraction of active products with positive returns &1&1\\
+Portfolio structure & Constituent count and largest weight &2&2\\
+Shock--volume interaction & Standardized shock times relative volume &1&1\\\midrule
+\textbf{Market-specific total}&&\textbf{21}&\textbf{15}\\\bottomrule
+\end{tabularx}
+\vspace{0.15cm}
+\textbf{Three cross-market features:} 60-observation correlation, 60-observation sensitivity, and standardized 20-observation momentum divergence.
+\smallnote{Normalize activity within products before weighted aggregation. Calculate volatility from portfolio returns. Historical activity denominators exclude the current observation. Constant-feature removal occurs inside training folds.}
+\note{The exploratory heatmaps do not determine feature selection using the test period. Missing values are handled within training pipelines.}
+\end{frame}
+
+\section{Model Fitting and Evaluation}
+
+% 8. MODELS
+\begin{frame}{Model fitting and evaluation}
+\small
+\begin{tabularx}{\linewidth}{p{3cm}X}
+\toprule
+\textbf{Model}&\textbf{Role}\\\midrule
+Ridge regression & Regularized linear relationships between features and returns\\
+Random forest & Nonlinear relationships through an average of regression trees\\
+Gradient boosting & Sequential trees that correct residual prediction errors\\\bottomrule
+\end{tabularx}
+\vspace{0.2cm}
+\begin{columns}[T]
+\begin{column}{0.49\linewidth}
+\textbf{Three input sets}
+\begin{itemize}
+\item China only: 21 features
+\item China + US: 36 features
+\item China + US + cross: 39 features
+\end{itemize}
+\end{column}
+\begin{column}{0.49\linewidth}
+\textbf{Copper evaluation}
+\begin{itemize}
+\item Training: 686 observations
+\item Test: 239 observations
+\item Test boundary: October 1, 2025
+\end{itemize}
+\end{column}
+\end{columns}
+\[\operatorname{MSE}=\frac{1}{N}\sum_{t=1}^{N}(y_t-\widehat y_t)^2\]
+\smallnote{Use identical test dates within each portfolio. Benchmarks predict zero or the training mean. Imputation, constant-feature removal, and scaling use training data only.}
+\end{frame}
+
+\section{Hyperparameter Tuning}
+
+% 9. CV AND TUNING
+\begin{frame}{Chronological cross-validation and tuning}
+\small
+\textbf{Copper expanding-window folds}
+\begin{tabularx}{\linewidth}{cXXr}
+\toprule
+Fold&Training ends&Validation period&Train / validation\\\midrule
+1&March 28, 2024&April--September 2024&319 / 123\\
+2&September 27, 2024&October 2024--March 2025&442 / 118\\
+3&March 28, 2025&April--September 2025&560 / 125\\\bottomrule
+\end{tabularx}
+\vspace{0.17cm}
+\textbf{Grid search}
+\begin{tabularx}{\linewidth}{p{2.6cm}Xr}
+\toprule
+Model&Candidates&Combinations\\\midrule
+Ridge&$\alpha\in\{0.1,1,10,100,1000\}$&5\\
+Random forest&Depth $\in\{3,6\}$; minimum leaf size $\in\{10,30\}$&4\\
+Gradient boosting&Trees $\in\{100,200\}$; learning rate $\in\{0.03,0.1\}$; depth $\in\{1,2\}$&8\\\bottomrule
+\end{tabularx}
+\vspace{0.15cm}
+Select the \textbf{lowest mean validation MSE}, then refit on all training observations.
+\smallnote{Purge unavailable training labels at validation boundaries. Each portfolio uses 153 CV fits and 9 final refits. Random forest uses 200 trees and feature fraction 0.7. Test outcomes do not select hyperparameters.}
+\end{frame}
+
+\section{Ensembling}
+
+% 10. ENSEMBLE
+\begin{frame}{Equal-average ensemble}
+\[\widehat y_t^{\,\mathrm{ensemble}}=
+\frac{\widehat y_t^{\,\mathrm{Ridge}}+\widehat y_t^{\,\mathrm{RF}}+\widehat y_t^{\,\mathrm{GB}}}{3}\]
+\begin{itemize}
+\item Average predictions, rather than fitted parameters.
+\item Construct a separate ensemble for each feature set.
+\item Fix weights at one third each; do not optimize on the test.
+\end{itemize}
+\vspace{0.2cm}
+\small
+\begin{tabular}{lrr}
+\toprule
+\textbf{Copper full-feature model}&\textbf{Test RMSE, bp}&\textbf{Direction accuracy}\\\midrule
+Ridge&98.26&51.9\%\\
+Random forest&97.64&57.3\%\\
+Gradient boosting&97.31&56.9\%\\
+Ensemble&97.65&56.5\%\\\bottomrule
+\end{tabular}
+\smallnote{Averaging can reduce model-specific variation, but does not guarantee better forecasts. One basis point equals 0.01 percentage point.}
+\end{frame}
+
+\section{Results and Conclusions}
+
+% 11. COPPER RESULTS
+\begin{frame}{Copper: small and model-dependent improvement}
+\small
+\begin{tabularx}{\linewidth}{Xrrrr}
+\toprule
+&\multicolumn{2}{c}{\textbf{Test RMSE, bp}}&\textbf{MSE reduction}&\textbf{OOS $R^2$}\\
+\cmidrule(lr){2-3}
+\textbf{Model}&China only&Full&vs.\ China only&vs.\ zero\\\midrule
+Ridge&98.05&98.26&$-0.41\%$&$-0.0143$\\
+Random forest&97.80&97.64&$+0.32\%$&$-0.0016$\\
+Gradient boosting&97.88&97.31&$+1.16\%$&$+0.0051$\\
+Ensemble&97.82&97.65&$+0.34\%$&$-0.0018$\\\midrule
+Zero forecast&\multicolumn{2}{c}{97.56}&---&0\\
+Training-mean forecast&\multicolumn{2}{c}{97.39}&---&$+0.0036$\\\bottomrule
+\end{tabularx}
+\vspace{0.15cm}
+\[R^2_{\mathrm{OOS},0}=1-\frac{\operatorname{MSE}_{\mathrm{model}}}{\operatorname{MSE}_{\mathrm{zero}}}\]
+\begin{itemize}
+\item Full gradient boosting reduces domestic-model MSE by \textbf{1.16\%}.
+\item Its improvement over the zero forecast is only \textbf{0.51\%}.
+\item Most configurations do not outperform simple benchmarks.
+\end{itemize}
+\smallnote{Test: October 9, 2025--September 30, 2026, with 239 observations. Full means China + US + cross-market. Statistical significance has not been established.}
+\end{frame}
+
+% 12. FEATURE IMPORTANCE
+\begin{frame}{Feature importance: validation permutation analysis}
+\small
+\textbf{Method:} shuffle a feature in five-observation blocks, then measure validation MSE changes without retraining.
+\vspace{0.2cm}
+\begin{tabularx}{\linewidth}{Xrr}
+\toprule
+\textbf{Copper ensemble feature}&\textbf{MSE increase}&\textbf{Positive folds}\\\midrule
+Chinese 5-observation momentum&0.187\%&2/3\\
+Chinese previous-observation return&0.150\%&3/3\\
+Chinese standardized return shock&0.143\%&3/3\\
+Chinese latest available return&0.135\%&3/3\\
+US previous-observation return&0.124\%&2/3\\\bottomrule
+\end{tabularx}
+\vspace{0.2cm}
+\begin{itemize}
+\item Positive importance: shuffling worsens predictions.
+\item Negative importance: shuffling improves predictions.
+\item Correlated features can substitute for one another.
+\end{itemize}
+\smallnote{Three chronological validation folds and 10 permutations. Saved CV-selected hyperparameters are reused: this is a non-nested diagnostic. Importance is not causal evidence or a replacement for feature-group comparisons.}
+\end{frame}
+
+% 13. OTHER PORTFOLIOS
+\begin{frame}{Comparison across four anchored portfolios}
+\small
+\textbf{Test MSE reduction from adding US + cross-market features}
+\vspace{0.2cm}
+\begin{tabularx}{\linewidth}{Xrrrr}
+\toprule
+\textbf{Portfolio}&\textbf{Ridge}&\textbf{RF}&\textbf{Boosting}&\textbf{Ensemble}\\\midrule
+Copper&$-0.41\%$&$+0.32\%$&$+1.16\%$&$+0.34\%$\\
+Gold&$-0.31\%$&$+0.28\%$&$-0.36\%$&$-0.10\%$\\
+Crude oil&$-1.46\%$&$-0.42\%$&$+0.30\%$&$-0.57\%$\\
+Soybeans&$-3.62\%$&$-0.33\%$&$-1.37\%$&$-1.53\%$\\\bottomrule
+\end{tabularx}
+\vspace{0.3cm}
+\begin{itemize}
+\item Copper provides the clearest initial nonlinear gain.
+\item Gold and crude oil show inconsistent incremental value.
+\item US features worsen soybean forecasts in this run.
+\end{itemize}
+\smallnote{Positive values mean improvement over the same model with domestic features. Same protocol for each portfolio. Test samples: copper 239, others 241. Sector comparisons are exploratory.}
+\end{frame}
+
+% 14. CONCLUSION -- only one conclusion slide
+\begin{frame}{Results and conclusions}
+\large
+US information provides \alert{limited, model-dependent} forecast improvement in this daily-return baseline.
+\vspace{0.25cm}
+\normalsize
+\begin{itemize}
+\item Adaptive clusters describe changing commodity relationships.
+\item Cross-market co-movement does not automatically produce useful forecasts.
+\item Copper boosting shows a small gain; most models remain close to or below simple benchmarks.
+\end{itemize}
+\vspace{0.15cm}
+\textbf{Limitations and next steps}
+\begin{itemize}
+\item Publication delays are assumed. Daily bars cannot isolate Chinese daytime returns.
+\item Training data are limited and relationships may change across regimes.
+\item Future work: intraday alignment, chronological refitting, uncertainty analysis, and regime-conditioned tests.
+\end{itemize}
+\smallnote{Findings concern predictive information. They do not establish causality or trading profitability.}
+\end{frame}
+
+% ============================================================
+% APPENDIX -- backup slides, outside the main 12-minute talk
+% ============================================================
+\appendix
+\backuptrue
+\section{Appendix}
+
+\begin{frame}{Appendix: code repository and reproducibility}
+\textbf{Repository}
+\vspace{0.1cm}
+\begin{center}\small
+\href{\RepositoryURL}{github.com/winztonfas/uiuc\_commodity\_research}
+\end{center}
+\small
+\begin{tabularx}{\linewidth}{p{5cm}X}
+\toprule
+\textbf{File}&\textbf{Purpose}\\\midrule
+\texttt{cluster\_index.py}&Historical clustering and HRP portfolios\\
+\texttt{features.py}&Reusable feature calculations\\
+\texttt{calculate\_features.py}&Product and portfolio features\\
+\texttt{build\_prediction\_data.py}&Availability, frozen targets, and splits\\
+\texttt{copper\_ml.py}&Shared single-portfolio experiment\\
+\texttt{sector\_ml.py}&Additional portfolios and comparison\\
+\texttt{feature\_importance.py}&Validation permutation importance\\
+\texttt{plot.py}&Formatted research figures\\\bottomrule
+\end{tabularx}
+\smallnote{Data and model artifacts are separate from source code. Intermediate and final tables use DuckDB.}
+\end{frame}
+
+\begin{frame}{Appendix: configured commodity roots}
+\small
+\begin{tabularx}{\linewidth}{p{2.1cm}XX}
+\toprule
+\textbf{Sector}&\textbf{China}&\textbf{US}\\\midrule
+Metals&AU, AG, CU, AL, ZN, PB, NI, SN, PT, PD&GC, SI, HG, ALI\\
+Energy&SC, FU, LU, BU&CL, HO, RB, NG\\
+Agriculture&B, M, Y, C, PM, WH, JR, RI, LH&ZS, ZM, ZL, ZC, ZW, KE, ZR, HE\\\bottomrule
+\end{tabularx}
+\vspace{0.25cm}
+\begin{tabularx}{\linewidth}{p{2.3cm}XX}
+\toprule
+\textbf{Anchor}&\textbf{China}&\textbf{US}\\\midrule
+Gold&AU&GC\\
+Copper&CU&HG\\
+Crude oil&SC&CL\\
+Soybeans&B&ZS\\
+Wheat&WH, unavailable portfolio&ZW\\\bottomrule
+\end{tabularx}
+\smallnote{Anchors identify changing portfolios, not single-contract targets. PT and PD have short histories. Eligibility depends on historical coverage and return variation.}
+\end{frame}
+
+\begin{frame}{Appendix: return and volume feature definitions}
+\scriptsize
+Let $r_t$ be the latest completed portfolio return available at the cutoff.
+\begin{tabularx}{\linewidth}{p{4.5cm}X}
+\toprule
+\textbf{Feature}&\textbf{Definition / window}\\\midrule
+Latest return&$r_t$\\
+Previous return&$r_{t-1}$\\
+Absolute return&$|r_t|$\\
+5-observation momentum&$\prod_{j=0}^{4}(1+r_{t-j})-1$\\
+20-observation momentum&$\prod_{j=0}^{19}(1+r_{t-j})-1$\\
+5-observation volatility&Sample standard deviation of latest 5 returns\\
+20-observation volatility&Sample standard deviation of latest 20 returns\\
+Standardized shock&$r_t$ / standard deviation of preceding 20 returns, excluding $r_t$\\
+Relative volume&$V_t$ / preceding 20-observation mean volume\\
+Volume breakout ratio&$V_t$ / preceding 20-observation maximum volume\\
+Volume breakout indicator&1 if breakout ratio exceeds 1; otherwise 0\\
+Positive-return breadth&Fraction of active constituents with positive returns\\
+Shock--volume interaction&Portfolio shock times weighted relative volume\\\bottomrule
+\end{tabularx}
+\smallnote{Calculate volume ratios per product before weighted aggregation. Windows count observations, not calendar days. Volatility is not annualized.}
+\end{frame}
+
+\begin{frame}{Appendix: turnover, open interest, and structure}
+\small
+\begin{tabularx}{\linewidth}{p{4.7cm}X}
+\toprule
+\textbf{Feature}&\textbf{Definition}\\\midrule
+Relative turnover&Current amount / preceding 20-observation mean amount\\
+Turnover breakout ratio&Current amount / preceding 20-observation maximum amount\\
+Turnover breakout indicator&1 if current amount exceeds preceding 20-observation maximum\\
+1-observation OI change&$\mathrm{OI}_t/\mathrm{OI}_{t-1}-1$\\
+5-observation OI change&$\mathrm{OI}_t/\mathrm{OI}_{t-5}-1$\\
+Return--OI interaction&Product return times its 1-observation OI change\\
+Constituent count&Number of active products\\
+Largest weight&Maximum effective portfolio weight\\\bottomrule
+\end{tabularx}
+\smallnote{Turnover and OI features are available for China. Current activity uses selected-contract data rather than all-expiry totals. OI changes spanning selected-contract rolls are masked. Monetary turnover differs from contract volume.}
+\end{frame}
+
+\begin{frame}{Appendix: cross-market features and diagnostics}
+\small
+\begin{tabularx}{\linewidth}{p{4.5cm}X}
+\toprule
+\textbf{Feature}&\textbf{Definition}\\\midrule
+Rolling correlation&60 forecast observations, requiring at least 30 paired available returns\\
+Rolling sensitivity&Rolling Chinese--US covariance / rolling US return variance\\
+Momentum divergence&Difference between local 20-observation momenta, each divided by its available 20-observation volatility times $\sqrt{20}$\\\bottomrule
+\end{tabularx}
+\vspace{0.2cm}
+\textbf{Stored diagnostics excluded from the 39-feature allowlist}
+\begin{itemize}
+\item Publication timestamps and feature ages
+\item Fallback, constituent changes, exclusions, and available weight
+\item Contract-roll flag, interval bar count, and paired sample count
+\end{itemize}
+\smallnote{Associations use cutoff-known returns whose endpoints need not coincide. They are not interpreted as contemporaneous correlations or causal coefficients.}
+\end{frame}
+
+\begin{frame}{Appendix: selected copper full-model parameters}
+\small
+\begin{tabularx}{\linewidth}{p{3.1cm}X}
+\toprule
+\textbf{Model}&\textbf{Selected configuration}\\\midrule
+Ridge&$\alpha=1000$\\
+Random forest&200 trees; depth 3; minimum leaf size 10; feature fraction 0.7\\
+Gradient boosting&100 trees; learning rate 0.03; depth 1; minimum leaf size 20\\\bottomrule
+\end{tabularx}
+\vspace{0.3cm}
+\begin{itemize}
+\item Select minimum mean chronological validation MSE.
+\item Each model and feature set selects its own configuration.
+\item Fit preprocessing inside each training fold.
+\item Keep the final pipeline fixed throughout the test period.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Appendix: forecast metrics and benchmarks}
+\small
+\[\mathrm{MSE}=\frac{1}{N}\sum_t(y_t-\widehat y_t)^2,
+\qquad \mathrm{RMSE}=\sqrt{\mathrm{MSE}}\]
+\[\mathrm{MAE}=\frac{1}{N}\sum_t|y_t-\widehat y_t|\]
+\[R^2_{\mathrm{OOS},0}=1-\frac{\sum_t(y_t-\widehat y_t)^2}{\sum_t y_t^2}\]
+\[R^2_{\mathrm{OOS},\bar y_{\mathrm{train}}}=1-
+\frac{\sum_t(y_t-\widehat y_t)^2}{\sum_t(y_t-\bar y_{\mathrm{train}})^2}\]
+\begin{itemize}
+\item Zero benchmark: predict 0 every day.
+\item Training-mean benchmark: predict the training mean every day.
+\item Positive OOS $R^2$: lower MSE than the benchmark.
+\item Direction accuracy compares actual and predicted signs.
+\end{itemize}
+\smallnote{Negative OOS scores indicate benchmark underperformance, not proof that no market signal exists.}
+\end{frame}
+
+\begin{frame}{Appendix: boundary purging}
+\small
+\textbf{First held-out forecast}
+\begin{tabularx}{\linewidth}{p{4cm}X}
+\toprule
+Target trading date&October 9, 2025\\
+Forecast cutoff&September 30, 2025, 15:00 China time\\
+September 30 target finishes&September 30, 2025, 15:00\\
+Assumed label availability&October 1, 2025, 15:00\\\bottomrule
+\end{tabularx}
+\vspace{0.3cm}
+September 30's label is unavailable at the first test cutoff under the assumed publication delay. Exclude that row from training.
+\[\text{training label available time}\leq\text{first evaluation cutoff}\]
+\smallnote{Apply the same rule within CV. The original rows remain in the database with a purged-boundary flag.}
+\end{frame}
+
+\begin{frame}{Appendix: rolling volatility}
+\projectfigure{sector_rolling_volatility_20.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: metals return distribution}
+\projectfigure{metal_return_histogram.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: energy return distribution}
+\projectfigure{energy_return_histogram.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: agriculture return distribution}
+\projectfigure{agriculure_return_histogram.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: clustering at January 2023}
+\projectfigure{market_dendrograms_2023-01-01.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: clustering at January 2026}
+\projectfigure{market_dendrograms_2026-01-01.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: Chinese copper feature correlations}
+\projectfigure{china_copper_features.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: US copper feature correlations}
+\projectfigure{us_copper_features.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: calendar-date cross-market EDA}
+\projectfigure{cross_market_copper_calendar_eda.png}{5.8cm}
+\smallnote{Calendar-date EDA only. The prediction dataset separately uses availability-based alignment.}
+\end{frame}
+
+\begin{frame}{Appendix: copper model comparison}
+\projectfigure{copper_ml_comparison.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: comparison across portfolios}
+\projectfigure{sector_ml_summary.png}{5.8cm}
+\end{frame}
+
+\begin{frame}{Appendix: copper permutation importance}
+\projectfigure{copper_feature_importance.png}{5.8cm}
+\smallnote{Validation-only model diagnostic. Repeat variation is not a confidence interval. Group effects are not additive.}
+\end{frame}
+
+\begin{frame}{Appendix: joint feature-group importance}
+\projectfigure{feature_group_importance.png}{5.8cm}
+\smallnote{Validation-only model diagnostic. Repeat variation is not a confidence interval. Group effects are not additive.}
+\end{frame}
+
+\begin{frame}{Appendix: data and method references}
+\small
+\begin{itemize}
+\item \href{https://tushare.pro/document/2?doc_id=138}{Tushare: futures daily data and field definitions}
+\vspace{0.2cm}
+\item \href{https://databento.com/docs/schemas-and-data-formats/ohlcv}{Databento: OHLCV interval conventions}
+\vspace{0.2cm}
+\item \href{https://www.shfe.cn/eng/reports/CalendarHolidays/TradingHours/}{Shanghai Futures Exchange: trading hours}
+\vspace{0.2cm}
+\item L\'opez de Prado, M. (2016). \textit{Building Diversified Portfolios that Outperform Out-of-Sample}.\\
+\href{https://ssrn.com/abstract=2708678}{HRP methodology}
+\vspace{0.2cm}
+\item \href{https://scikit-learn.org/stable/modules/permutation_importance.html}{Scikit-learn: permutation feature importance}
+\end{itemize}
+\end{frame}
+
+\end{document}
