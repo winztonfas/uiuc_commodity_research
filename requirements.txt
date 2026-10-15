@@ -99,3 +99,7 @@ websocket-client==1.9.0
 websockets==16.0
 wheel==0.47.0
 yarl==1.23.0
+scikit-learn==1.9.1
+joblib==1.6.0
+threadpoolctl==3.7.0
+cloudpickle==3.1.2

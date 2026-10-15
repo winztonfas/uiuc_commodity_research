@@ -1,0 +1,689 @@
+anchor,model,kind,feature,importance_mean_pct,permutation_std_pct,positive_folds,folds
+copper,Ensemble,group,Chinese features,0.3009549017476719,0.31376147074113026,2,3
+copper,Ensemble,group,Cross-market features,0.06354618656189806,0.1800418574869238,2,3
+copper,Ensemble,group,US + cross-market,-0.5182821903320188,0.6524209140354554,2,3
+copper,Ensemble,group,US features,-0.5699660941008617,0.5598304974081282,2,3
+copper,Ensemble,individual,cn_absolute_return,0.048897950427623196,0.13102591411327413,2,3
+copper,Ensemble,individual,cn_constituent_count,-0.0020527004542368445,0.008513486814386958,0,3
+copper,Ensemble,individual,cn_largest_weight,-0.0010446073678500767,0.02785211507499326,1,3
+copper,Ensemble,individual,cn_momentum_20,-0.45926831023115716,0.2944790886473917,2,3
+copper,Ensemble,individual,cn_momentum_5,0.18658592899227372,0.06847595587158188,2,3
+copper,Ensemble,individual,cn_oi_change_1,0.03435162402302566,0.046767418457186224,2,3
+copper,Ensemble,individual,cn_oi_change_5,-0.03247299525657251,0.017164176010886482,1,3
+copper,Ensemble,individual,cn_positive_return_breadth,-0.060131234941672364,0.284259055392037,2,3
+copper,Ensemble,individual,cn_return_lag0,0.13499967014083547,0.10520269944555503,3,3
+copper,Ensemble,individual,cn_return_lag1,0.14972516076158765,0.11306126037177011,3,3
+copper,Ensemble,individual,cn_return_oi_interaction,-0.050142716427010514,0.0410099912727172,1,3
+copper,Ensemble,individual,cn_shock_20,0.14345086243691968,0.16924279627822622,3,3
+copper,Ensemble,individual,cn_shock_volume_interaction,0.028852677988378855,0.045834686660645635,2,3
+copper,Ensemble,individual,cn_turnover_breakout_20,-0.00967299298882041,0.02206046544331483,0,3
+copper,Ensemble,individual,cn_turnover_breakout_ratio_20,0.0311870526780343,0.11553853490676608,1,3
+copper,Ensemble,individual,cn_turnover_relative_20,0.01197857835198769,0.01991358703471827,3,3
+copper,Ensemble,individual,cn_volatility_20,-0.01941684128922728,0.03617915467358779,1,3
+copper,Ensemble,individual,cn_volatility_5,-0.002167258229157045,0.041889977159859065,2,3
+copper,Ensemble,individual,cn_volume_breakout_20,-0.03626421599037409,0.022441076023004724,1,3
+copper,Ensemble,individual,cn_volume_breakout_ratio_20,-0.010820341516918117,0.024576127164734285,0,3
+copper,Ensemble,individual,cn_volume_relative_20,0.005514820273363958,0.02129936940897535,2,3
+copper,Ensemble,individual,cross_correlation_60,0.008357831892927218,0.02480789112750659,2,3
+copper,Ensemble,individual,cross_momentum_divergence_20,-0.02594668919002701,0.12751031430263432,2,3
+copper,Ensemble,individual,cross_sensitivity_60,0.08458832603345863,0.08877588202859488,2,3
+copper,Ensemble,individual,us_absolute_return,-0.019505295367329995,0.02077807840787987,2,3
+copper,Ensemble,individual,us_constituent_count,0.028928231284485777,0.11437735755586091,1,3
+copper,Ensemble,individual,us_largest_weight,-0.10720512907087218,0.055161762557430626,0,3
+copper,Ensemble,individual,us_momentum_20,-0.40347059471998314,0.25745902557173495,0,3
+copper,Ensemble,individual,us_momentum_5,-0.03208400300160569,0.20381677027900086,2,3
+copper,Ensemble,individual,us_positive_return_breadth,-0.013474514521818606,0.03206017052582662,1,3
+copper,Ensemble,individual,us_return_lag0,0.007640017149495989,0.09670970145545477,2,3
+copper,Ensemble,individual,us_return_lag1,0.12439203075976472,0.14745244509106187,2,3
+copper,Ensemble,individual,us_shock_20,0.005506781736088609,0.042655372692483665,2,3
+copper,Ensemble,individual,us_shock_volume_interaction,-0.028407980355458308,0.01861073011993646,1,3
+copper,Ensemble,individual,us_volatility_20,-0.055128338304737776,0.07916420979973209,1,3
+copper,Ensemble,individual,us_volatility_5,-0.06779817550055839,0.23601435831321516,2,3
+copper,Ensemble,individual,us_volume_breakout_20,-0.09442802314635548,0.0594313374278463,1,3
+copper,Ensemble,individual,us_volume_breakout_ratio_20,-0.01748872868075454,0.035307149661332186,2,3
+copper,Ensemble,individual,us_volume_relative_20,0.007264554607456812,0.04373840532315239,1,3
+copper,Gradient boosting,group,Chinese features,0.6174861291642098,0.45644957030392824,2,3
+copper,Gradient boosting,group,Cross-market features,0.10003921499906529,0.19493341291154437,2,3
+copper,Gradient boosting,group,US + cross-market,-0.15739538620406837,0.5803122610911075,2,3
+copper,Gradient boosting,group,US features,-0.23759363068791708,0.553422559429729,1,3
+copper,Gradient boosting,individual,cn_absolute_return,-0.0004035717580051862,0.15986116811963935,2,3
+copper,Gradient boosting,individual,cn_constituent_count,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_largest_weight,-0.0040770099307283455,0.027579137076564172,0,3
+copper,Gradient boosting,individual,cn_momentum_20,-0.6919577708664875,0.3074007397954004,0,3
+copper,Gradient boosting,individual,cn_momentum_5,0.30735278684367046,0.108393544794927,2,3
+copper,Gradient boosting,individual,cn_oi_change_1,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_oi_change_5,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_positive_return_breadth,0.1267000995911331,0.3456148881524307,1,3
+copper,Gradient boosting,individual,cn_return_lag0,0.04934881923342462,0.03628333030557051,1,3
+copper,Gradient boosting,individual,cn_return_lag1,0.296630932011118,0.23677178817379788,2,3
+copper,Gradient boosting,individual,cn_return_oi_interaction,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_shock_20,0.32332406278381254,0.24946213092697528,2,3
+copper,Gradient boosting,individual,cn_shock_volume_interaction,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_turnover_breakout_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_turnover_breakout_ratio_20,0.18247950236110097,0.24994633891985038,1,3
+copper,Gradient boosting,individual,cn_turnover_relative_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_volatility_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_volatility_5,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_volume_breakout_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_volume_breakout_ratio_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,cn_volume_relative_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,cross_correlation_60,0.0,0.0,0,3
+copper,Gradient boosting,individual,cross_momentum_divergence_20,-0.07422929810384224,0.1106196855601585,1,3
+copper,Gradient boosting,individual,cross_sensitivity_60,0.17426851310290753,0.16546996740479034,1,3
+copper,Gradient boosting,individual,us_absolute_return,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_constituent_count,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_largest_weight,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_momentum_20,-0.5012430777610545,0.2951915875818496,0,3
+copper,Gradient boosting,individual,us_momentum_5,0.012255666825332311,0.2320912500274914,2,3
+copper,Gradient boosting,individual,us_positive_return_breadth,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_return_lag0,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_return_lag1,0.18440844886639152,0.18506617161165795,2,3
+copper,Gradient boosting,individual,us_shock_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_shock_volume_interaction,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_volatility_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_volatility_5,0.058184540904429115,0.31370846974838623,2,3
+copper,Gradient boosting,individual,us_volume_breakout_20,0.0,0.0,0,3
+copper,Gradient boosting,individual,us_volume_breakout_ratio_20,-0.05070336809706617,0.05736955033059153,1,3
+copper,Gradient boosting,individual,us_volume_relative_20,0.04038739747406518,0.03886174495963737,1,3
+copper,Random forest,group,Chinese features,0.7379255011909343,0.3955212428124484,2,3
+copper,Random forest,group,Cross-market features,0.025397391023234666,0.21637194716132738,2,3
+copper,Random forest,group,US + cross-market,-0.462578008641667,0.9428867606167011,2,3
+copper,Random forest,group,US features,-0.4883613888401014,0.768322439210982,2,3
+copper,Random forest,individual,cn_absolute_return,0.04536052342814808,0.21000560218873443,2,3
+copper,Random forest,individual,cn_constituent_count,-0.0035785167416511727,0.007285085932293376,0,3
+copper,Random forest,individual,cn_largest_weight,-0.004623121765277549,0.04495740400999837,0,3
+copper,Random forest,individual,cn_momentum_20,-0.41244264444813705,0.42522179658921805,2,3
+copper,Random forest,individual,cn_momentum_5,0.23487029943636162,0.0957552714068669,2,3
+copper,Random forest,individual,cn_oi_change_1,0.12920204838964877,0.10360032346396006,2,3
+copper,Random forest,individual,cn_oi_change_5,-0.01653101055390447,0.06768080573132865,1,3
+copper,Random forest,individual,cn_positive_return_breadth,-0.1986312633503407,0.36713330848633924,1,3
+copper,Random forest,individual,cn_return_lag0,0.22749958346914304,0.20075830044859236,2,3
+copper,Random forest,individual,cn_return_lag1,0.2337798547731579,0.12184984516367715,3,3
+copper,Random forest,individual,cn_return_oi_interaction,-0.1277396029629127,0.0929167973381243,0,3
+copper,Random forest,individual,cn_shock_20,0.02648495018604527,0.1863679561035136,2,3
+copper,Random forest,individual,cn_shock_volume_interaction,0.03680697174460826,0.07707802081064895,2,3
+copper,Random forest,individual,cn_turnover_breakout_20,-0.022773061510101243,0.026527385766929736,0,3
+copper,Random forest,individual,cn_turnover_breakout_ratio_20,-0.05992367478906356,0.13068986383357428,1,3
+copper,Random forest,individual,cn_turnover_relative_20,0.0458287835208113,0.05468038578307358,2,3
+copper,Random forest,individual,cn_volatility_20,-0.016207670073611947,0.08341026262487088,2,3
+copper,Random forest,individual,cn_volatility_5,0.09129220174381054,0.06487748805942187,2,3
+copper,Random forest,individual,cn_volume_breakout_20,-0.00352092547464231,0.013990534642278458,1,3
+copper,Random forest,individual,cn_volume_breakout_ratio_20,-0.020669589434412952,0.06638511757657124,1,3
+copper,Random forest,individual,cn_volume_relative_20,0.030524980827947558,0.06062217959844521,3,3
+copper,Random forest,individual,cross_correlation_60,0.006559918574880527,0.039435769621699535,2,3
+copper,Random forest,individual,cross_momentum_divergence_20,-0.03280338700601991,0.16313194537377684,2,3
+copper,Random forest,individual,cross_sensitivity_60,0.0672418847317725,0.08018560629700434,2,3
+copper,Random forest,individual,us_absolute_return,-0.035040121064883176,0.06165955800271125,2,3
+copper,Random forest,individual,us_constituent_count,0.0,0.0,0,3
+copper,Random forest,individual,us_largest_weight,-0.08781251093203588,0.1013699116194217,0,3
+copper,Random forest,individual,us_momentum_20,-0.46312740564958493,0.35759052201623437,1,3
+copper,Random forest,individual,us_momentum_5,0.08638107849819539,0.270065908278172,1,3
+copper,Random forest,individual,us_positive_return_breadth,-0.01875838115357855,0.02342928034815904,0,3
+copper,Random forest,individual,us_return_lag0,-0.006252913202215551,0.09289489024787997,1,3
+copper,Random forest,individual,us_return_lag1,0.10406993398051248,0.16480676693644114,1,3
+copper,Random forest,individual,us_shock_20,0.019353883629487843,0.054480665217584816,2,3
+copper,Random forest,individual,us_shock_volume_interaction,-0.06858759179518925,0.06059968693040825,1,3
+copper,Random forest,individual,us_volatility_20,-0.07533798959429983,0.12990409767669253,1,3
+copper,Random forest,individual,us_volatility_5,-0.008859154261988529,0.2870982110293929,2,3
+copper,Random forest,individual,us_volume_breakout_20,-0.008344414445174881,0.03808269640228211,1,3
+copper,Random forest,individual,us_volume_breakout_ratio_20,0.0030347871052503568,0.049359185386493164,2,3
+copper,Random forest,individual,us_volume_relative_20,-0.049223966464748574,0.09234932903901054,0,3
+copper,Ridge,group,Chinese features,-0.4363895473813505,0.3306654645264838,1,3
+copper,Ridge,group,Cross-market features,0.04109328417197733,0.19464812654727218,2,3
+copper,Ridge,group,US + cross-market,-0.8981095542380475,0.5856608608317329,2,3
+copper,Ridge,group,US features,-0.9703047548646822,0.5077908265859697,2,3
+copper,Ridge,individual,cn_absolute_return,0.012183963441333136,0.09293418098113468,1,3
+copper,Ridge,individual,cn_constituent_count,-0.007676961387055016,0.026619413455430126,1,3
+copper,Ridge,individual,cn_largest_weight,-0.0102551886682208,0.014757725099707613,1,3
+copper,Ridge,individual,cn_momentum_20,-0.22257535907071016,0.22664328300091702,2,3
+copper,Ridge,individual,cn_momentum_5,-0.009100635325806624,0.09539934079056313,2,3
+copper,Ridge,individual,cn_oi_change_1,-0.03360715054004852,0.076362707783901,2,3
+copper,Ridge,individual,cn_oi_change_5,-0.08004301992483628,0.03755642599760181,1,3
+copper,Ridge,individual,cn_positive_return_breadth,-0.08456843129493256,0.16995212494042541,2,3
+copper,Ridge,individual,cn_return_lag0,0.0985194160503928,0.09807354097714793,2,3
+copper,Ridge,individual,cn_return_lag1,-0.054541615722911864,0.04831325025024861,0,3
+copper,Ridge,individual,cn_return_oi_interaction,-0.03920950023662193,0.08094070279218195,2,3
+copper,Ridge,individual,cn_shock_20,0.07904139186019027,0.1174333204980217,2,3
+copper,Ridge,individual,cn_shock_volume_interaction,0.025470102128960136,0.07191912238781457,2,3
+copper,Ridge,individual,cn_turnover_breakout_20,-0.012471508604820268,0.04343527107837456,1,3
+copper,Ridge,individual,cn_turnover_breakout_ratio_20,-0.024530199686797666,0.009610598341651861,1,3
+copper,Ridge,individual,cn_turnover_relative_20,-0.009847702571349589,0.013781308033463686,2,3
+copper,Ridge,individual,cn_volatility_20,-0.04708462177849908,0.10219160433538357,2,3
+copper,Ridge,individual,cn_volatility_5,-0.12239241777112135,0.12430780702008808,2,3
+copper,Ridge,individual,cn_volume_breakout_20,-0.10852615699411013,0.06117800037037702,1,3
+copper,Ridge,individual,cn_volume_breakout_ratio_20,-0.017781019004168015,0.014723477653049755,1,3
+copper,Ridge,individual,cn_volume_relative_20,-0.012261401433881632,0.008813784419200934,1,3
+copper,Ridge,individual,cross_correlation_60,0.021916442111817612,0.05715566127091275,2,3
+copper,Ridge,individual,cross_momentum_divergence_20,-0.0038853530084438184,0.15718331777717218,2,3
+copper,Ridge,individual,cross_sensitivity_60,0.017188948626593852,0.03186461187405692,2,3
+copper,Ridge,individual,us_absolute_return,-0.026889839670542603,0.02463504516733591,2,3
+copper,Ridge,individual,us_constituent_count,0.07986449345906126,0.346067687254493,1,3
+copper,Ridge,individual,us_largest_weight,-0.2254162118187848,0.21372085423376433,0,3
+copper,Ridge,individual,us_momentum_20,-0.2665248202319611,0.12954918995020948,0,3
+copper,Ridge,individual,us_momentum_5,-0.2310332680988317,0.24810533489061667,2,3
+copper,Ridge,individual,us_positive_return_breadth,-0.020861094537197165,0.07508534289254108,1,3
+copper,Ridge,individual,us_return_lag0,0.04256041104114766,0.2059369103385202,2,3
+copper,Ridge,individual,us_return_lag1,0.06643481548444903,0.13656472088575627,2,3
+copper,Ridge,individual,us_shock_20,-0.0026336866248814574,0.08036495876947232,1,3
+copper,Ridge,individual,us_shock_volume_interaction,-0.013773097656389465,0.027405867258666766,2,3
+copper,Ridge,individual,us_volatility_20,-0.10104077408546316,0.1633932549142644,2,3
+copper,Ridge,individual,us_volatility_5,-0.2600187265642299,0.16138989764742637,2,3
+copper,Ridge,individual,us_volume_breakout_20,-0.2760761484948152,0.1385475896307287,1,3
+copper,Ridge,individual,us_volume_breakout_ratio_20,-0.013758731539436303,0.01524244069581548,1,3
+copper,Ridge,individual,us_volume_relative_20,0.04365968416890354,0.05726244363979809,3,3
+crude,Ensemble,group,Chinese features,0.5277406482470459,1.2011347043820093,3,3
+crude,Ensemble,group,Cross-market features,0.07954926604547527,0.11312847083787021,2,3
+crude,Ensemble,group,US + cross-market,0.03607204283593739,0.1793499298637336,1,3
+crude,Ensemble,group,US features,-0.025549904894642518,0.13290012563533138,1,3
+crude,Ensemble,individual,cn_absolute_return,-0.3823633597423747,0.5064435194614926,1,3
+crude,Ensemble,individual,cn_constituent_count,0.01178029805903867,0.05813784949960151,1,3
+crude,Ensemble,individual,cn_largest_weight,0.011952339273759242,0.019825570482892286,3,3
+crude,Ensemble,individual,cn_momentum_20,1.0491512129845992,0.4330125030290028,3,3
+crude,Ensemble,individual,cn_momentum_5,0.18571333522865607,0.060061304977023965,3,3
+crude,Ensemble,individual,cn_oi_change_1,0.10530702523188587,0.18585009917282835,3,3
+crude,Ensemble,individual,cn_oi_change_5,-0.016858725209649615,0.04227411154334151,1,3
+crude,Ensemble,individual,cn_positive_return_breadth,0.0058069936749698785,0.013478512177071425,1,3
+crude,Ensemble,individual,cn_return_lag0,0.013609992210504292,0.06721108550547696,1,3
+crude,Ensemble,individual,cn_return_lag1,0.04710085219442538,0.0945659967828296,2,3
+crude,Ensemble,individual,cn_return_oi_interaction,0.021553602751151223,0.07514222271491951,2,3
+crude,Ensemble,individual,cn_shock_20,-0.009769760534190472,0.036801258842597086,1,3
+crude,Ensemble,individual,cn_shock_volume_interaction,-0.3458794023386941,0.2250237778985148,1,3
+crude,Ensemble,individual,cn_turnover_breakout_20,0.23501252018276647,0.04291027191156262,3,3
+crude,Ensemble,individual,cn_turnover_breakout_ratio_20,-0.40220065953026946,0.07571330384147425,0,3
+crude,Ensemble,individual,cn_turnover_relative_20,-0.4147359986842069,0.25015535773460584,0,3
+crude,Ensemble,individual,cn_volatility_20,0.011697499926386046,0.04771013441954989,2,3
+crude,Ensemble,individual,cn_volatility_5,-0.15495599053676484,0.10456113931867893,0,3
+crude,Ensemble,individual,cn_volume_breakout_20,-0.10096000112708463,0.026660804241851566,1,3
+crude,Ensemble,individual,cn_volume_breakout_ratio_20,-0.35002862370117016,0.06254101682938853,0,3
+crude,Ensemble,individual,cn_volume_relative_20,-0.5817175042699894,0.14870711787507432,0,3
+crude,Ensemble,individual,cross_correlation_60,-0.007829481086223066,0.012337585739171548,1,3
+crude,Ensemble,individual,cross_momentum_divergence_20,0.11305748911954323,0.12198827714778089,2,3
+crude,Ensemble,individual,cross_sensitivity_60,-0.014248743991625614,0.014413251439167562,1,3
+crude,Ensemble,individual,us_absolute_return,-0.07929662335530736,0.0341939983002105,1,3
+crude,Ensemble,individual,us_constituent_count,0.0,0.0,0,3
+crude,Ensemble,individual,us_largest_weight,-0.03954969876507219,0.030965935844420384,1,3
+crude,Ensemble,individual,us_momentum_20,0.0845461451618656,0.04021874013086511,3,3
+crude,Ensemble,individual,us_momentum_5,0.02743385324701599,0.0335196363645162,2,3
+crude,Ensemble,individual,us_positive_return_breadth,0.0045119447510436565,0.02990174178570818,1,3
+crude,Ensemble,individual,us_return_lag0,0.0010818817633503508,0.008046140940172171,1,3
+crude,Ensemble,individual,us_return_lag1,-0.07597337422685575,0.061625932679603854,0,3
+crude,Ensemble,individual,us_shock_20,0.03520347565930183,0.027050578085805726,1,3
+crude,Ensemble,individual,us_shock_volume_interaction,-0.02989561356764602,0.03899009330593211,1,3
+crude,Ensemble,individual,us_volatility_20,-0.0750056831957568,0.04534307224403977,1,3
+crude,Ensemble,individual,us_volatility_5,-0.03282342381044434,0.16940113447162625,2,3
+crude,Ensemble,individual,us_volume_breakout_20,0.14471181649004267,0.04211497472933519,3,3
+crude,Ensemble,individual,us_volume_breakout_ratio_20,0.058844070447303845,0.02230108387785,2,3
+crude,Ensemble,individual,us_volume_relative_20,0.010074058102939997,0.047419076476980924,2,3
+crude,Gradient boosting,group,Chinese features,0.8009061519150649,1.3379604399318719,3,3
+crude,Gradient boosting,group,Cross-market features,-0.0112966825065075,0.013418906839492682,0,3
+crude,Gradient boosting,group,US + cross-market,-0.15078042884494572,0.21648641979592484,2,3
+crude,Gradient boosting,group,US features,-0.13866375846907916,0.21517916066991538,2,3
+crude,Gradient boosting,individual,cn_absolute_return,-0.6205601303482584,0.6891324072264178,1,3
+crude,Gradient boosting,individual,cn_constituent_count,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_largest_weight,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_momentum_20,1.7401061713819939,0.7018715795293443,3,3
+crude,Gradient boosting,individual,cn_momentum_5,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_oi_change_1,0.1292416242536542,0.08042934981988589,1,3
+crude,Gradient boosting,individual,cn_oi_change_5,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_positive_return_breadth,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_return_lag0,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_return_lag1,0.03435068629842505,0.09652817872126211,2,3
+crude,Gradient boosting,individual,cn_return_oi_interaction,-0.025984073868999442,0.00946759691030559,0,3
+crude,Gradient boosting,individual,cn_shock_20,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_shock_volume_interaction,-0.3052907153619189,0.28779558969129976,1,3
+crude,Gradient boosting,individual,cn_turnover_breakout_20,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_turnover_breakout_ratio_20,-0.07886776678021395,0.02201398714855966,0,3
+crude,Gradient boosting,individual,cn_turnover_relative_20,-0.07655881411173941,0.5187678695830409,2,3
+crude,Gradient boosting,individual,cn_volatility_20,0.05051625672731273,0.0713674991893217,1,3
+crude,Gradient boosting,individual,cn_volatility_5,-0.1277932695563867,0.19428054352391538,0,3
+crude,Gradient boosting,individual,cn_volume_breakout_20,0.0,0.0,0,3
+crude,Gradient boosting,individual,cn_volume_breakout_ratio_20,-0.10463976751320163,0.05079931169560899,0,3
+crude,Gradient boosting,individual,cn_volume_relative_20,-0.5635713409302255,0.30942294452193897,0,3
+crude,Gradient boosting,individual,cross_correlation_60,0.0,0.0,0,3
+crude,Gradient boosting,individual,cross_momentum_divergence_20,-0.0112966825065075,0.013418906839492682,0,3
+crude,Gradient boosting,individual,cross_sensitivity_60,0.0,0.0,0,3
+crude,Gradient boosting,individual,us_absolute_return,0.0,0.0,0,3
+crude,Gradient boosting,individual,us_constituent_count,0.0,0.0,0,3
+crude,Gradient boosting,individual,us_largest_weight,-0.011241885952874809,0.00669885573901066,0,3
+crude,Gradient boosting,individual,us_momentum_20,0.0,0.0,0,3
+crude,Gradient boosting,individual,us_momentum_5,0.0,0.0,0,3
+crude,Gradient boosting,individual,us_positive_return_breadth,0.0,0.0,0,3
+crude,Gradient boosting,individual,us_return_lag0,0.0,0.0,0,3
+crude,Gradient boosting,individual,us_return_lag1,-0.14642764075841583,0.06689254110728328,1,3
+crude,Gradient boosting,individual,us_shock_20,0.1135152401741611,0.05026999437548075,2,3
+crude,Gradient boosting,individual,us_shock_volume_interaction,-0.03131404380994544,0.052538379533176714,0,3
+crude,Gradient boosting,individual,us_volatility_20,-0.015093073407178031,0.0266648281206483,0,3
+crude,Gradient boosting,individual,us_volatility_5,-0.18466564640871136,0.24895912634412765,2,3
+crude,Gradient boosting,individual,us_volume_breakout_20,0.0,0.0,0,3
+crude,Gradient boosting,individual,us_volume_breakout_ratio_20,0.11795744372773782,0.03555397200230866,2,3
+crude,Gradient boosting,individual,us_volume_relative_20,0.03089539236845696,0.056458349300650856,1,3
+crude,Random forest,group,Chinese features,0.2036401143813417,1.524977079483959,1,3
+crude,Random forest,group,Cross-market features,0.2119851606410768,0.20182611978056778,2,3
+crude,Random forest,group,US + cross-market,0.11727547653491929,0.31984496259165346,1,3
+crude,Random forest,group,US features,-0.07334849156562322,0.2333949702707028,1,3
+crude,Random forest,individual,cn_absolute_return,-0.5261391086324504,0.5514780462854748,1,3
+crude,Random forest,individual,cn_constituent_count,0.01493683971940786,0.050302233797229215,2,3
+crude,Random forest,individual,cn_largest_weight,0.0010648959442388476,0.014098934444057057,1,3
+crude,Random forest,individual,cn_momentum_20,1.0655225544501468,0.48793025075296587,3,3
+crude,Random forest,individual,cn_momentum_5,0.15355136970533667,0.08958400728028515,3,3
+crude,Random forest,individual,cn_oi_change_1,0.12549104068407718,0.19490159519458264,2,3
+crude,Random forest,individual,cn_oi_change_5,-0.09517926054829304,0.0692264202740057,1,3
+crude,Random forest,individual,cn_positive_return_breadth,-0.004056511126524763,0.008173458178610205,0,3
+crude,Random forest,individual,cn_return_lag0,-0.05318809930229236,0.18939923419769294,1,3
+crude,Random forest,individual,cn_return_lag1,0.07598512091333962,0.06499130313410009,3,3
+crude,Random forest,individual,cn_return_oi_interaction,0.0763257264113438,0.07900222044791093,2,3
+crude,Random forest,individual,cn_shock_20,-0.10416982648171161,0.09389033515534444,1,3
+crude,Random forest,individual,cn_shock_volume_interaction,-0.7066338878532761,0.3747639139125252,1,3
+crude,Random forest,individual,cn_turnover_breakout_20,0.08778365132317485,0.018875905673106087,3,3
+crude,Random forest,individual,cn_turnover_breakout_ratio_20,-0.45451039196821624,0.11561788458249526,0,3
+crude,Random forest,individual,cn_turnover_relative_20,-0.49842450157355345,0.26469473203397265,0,3
+crude,Random forest,individual,cn_volatility_20,-0.0013373202409288232,0.07360842193791961,2,3
+crude,Random forest,individual,cn_volatility_5,-0.3654812052245523,0.1399281006884264,0,3
+crude,Random forest,individual,cn_volume_breakout_20,-0.06470725238988959,0.02359722006923457,1,3
+crude,Random forest,individual,cn_volume_breakout_ratio_20,-0.3419778952656844,0.07992791518674143,0,3
+crude,Random forest,individual,cn_volume_relative_20,-0.5764946796363062,0.13213277599985093,0,3
+crude,Random forest,individual,cross_correlation_60,0.007477294025980595,0.03337565644645773,2,3
+crude,Random forest,individual,cross_momentum_divergence_20,0.2536886664904442,0.20522536704610767,3,3
+crude,Random forest,individual,cross_sensitivity_60,-0.017449852108775466,0.023183461021995738,1,3
+crude,Random forest,individual,us_absolute_return,-0.14420774009670945,0.03663946827662005,0,3
+crude,Random forest,individual,us_constituent_count,0.0,0.0,0,3
+crude,Random forest,individual,us_largest_weight,-0.06981156651858365,0.05076223567738828,0,3
+crude,Random forest,individual,us_momentum_20,0.11527537778514277,0.047184650706172476,3,3
+crude,Random forest,individual,us_momentum_5,0.10032308222496047,0.07093043089754919,3,3
+crude,Random forest,individual,us_positive_return_breadth,0.0039534798841319935,0.009660856619191303,1,3
+crude,Random forest,individual,us_return_lag0,-0.0006166183579240606,0.014325242672986375,1,3
+crude,Random forest,individual,us_return_lag1,-0.054069812361687244,0.09955926630916634,1,3
+crude,Random forest,individual,us_shock_20,-0.010390583983345705,0.0385885351856742,1,3
+crude,Random forest,individual,us_shock_volume_interaction,-0.06223432789379776,0.07342304165676576,1,3
+crude,Random forest,individual,us_volatility_20,-0.05818083495028063,0.041287069683381354,0,3
+crude,Random forest,individual,us_volatility_5,0.08221600844021697,0.14120495983031253,2,3
+crude,Random forest,individual,us_volume_breakout_20,0.030391179973445683,0.011886320541646315,3,3
+crude,Random forest,individual,us_volume_breakout_ratio_20,0.07991549494293533,0.037457994460781956,3,3
+crude,Random forest,individual,us_volume_relative_20,0.0366894304859578,0.07872583602432924,2,3
+crude,Ridge,group,Chinese features,0.6140156684926236,0.8634491749222099,2,3
+crude,Ridge,group,Cross-market features,0.06095978729514726,0.15098141550238722,2,3
+crude,Ridge,group,US + cross-market,0.18550947561228148,0.240721928607729,2,3
+crude,Ridge,group,US features,0.18888981514110878,0.1995862710434863,2,3
+crude,Ridge,individual,cn_absolute_return,-0.013562876654746491,0.34624203698350847,1,3
+crude,Ridge,individual,cn_constituent_count,0.010332029321017408,0.12568787500404777,1,3
+crude,Ridge,individual,cn_largest_weight,0.04319035640511908,0.05409066373648042,3,3
+crude,Ridge,individual,cn_momentum_20,0.46667744149193985,0.22724023377311064,3,3
+crude,Ridge,individual,cn_momentum_5,0.4489457990677953,0.11868173155034005,3,3
+crude,Ridge,individual,cn_oi_change_1,0.06344264599657609,0.29764399381429807,2,3
+crude,Ridge,individual,cn_oi_change_5,0.06367509820769177,0.09537080047336095,1,3
+crude,Ridge,individual,cn_positive_return_breadth,0.02108028213623194,0.039079922241280166,1,3
+crude,Ridge,individual,cn_return_lag0,0.0704864681357035,0.05718936246845832,1,3
+crude,Ridge,individual,cn_return_lag1,0.04511854388147509,0.15241482210580837,2,3
+crude,Ridge,individual,cn_return_oi_interaction,0.005715552633304299,0.15739453724566219,1,3
+crude,Ridge,individual,cn_shock_20,0.051220152949596906,0.0766642568149773,1,3
+crude,Ridge,individual,cn_shock_volume_interaction,0.01480267123304307,0.07762796700884315,2,3
+crude,Ridge,individual,cn_turnover_breakout_20,0.6486138976196065,0.11285106786952619,3,3
+crude,Ridge,individual,cn_turnover_breakout_ratio_20,-0.658339177775247,0.1235577063813842,0,3
+crude,Ridge,individual,cn_turnover_relative_20,-0.5753445070593602,0.07624902158023664,0,3
+crude,Ridge,individual,cn_volatility_20,-0.00871420536754899,0.06480646494356339,2,3
+crude,Ridge,individual,cn_volatility_5,0.059971068930140745,0.1223405754332858,2,3
+crude,Ridge,individual,cn_volume_breakout_20,-0.23582330227385548,0.059474503356077894,0,3
+crude,Ridge,individual,cn_volume_breakout_ratio_20,-0.5975601919424094,0.10298241847433025,0,3
+crude,Ridge,individual,cn_volume_relative_20,-0.5361173330148625,0.06747357545230699,0,3
+crude,Ridge,individual,cross_correlation_60,-0.03064961061334907,0.012809076683245641,1,3
+crude,Ridge,individual,cross_momentum_divergence_20,0.1147091327138309,0.1698171202108089,2,3
+crude,Ridge,individual,cross_sensitivity_60,-0.02407109479635257,0.024586612188029478,2,3
+crude,Ridge,individual,us_absolute_return,-0.08591807421630236,0.08618102606819411,1,3
+crude,Ridge,individual,us_constituent_count,0.0,0.0,0,3
+crude,Ridge,individual,us_largest_weight,-0.03395703057758217,0.043637976829212034,1,3
+crude,Ridge,individual,us_momentum_20,0.15351916951034109,0.08639323454893338,3,3
+crude,Ridge,individual,us_momentum_5,0.0022963547925916187,0.05696745819633128,2,3
+crude,Ridge,individual,us_positive_return_breadth,0.019066089092693674,0.08537129167619135,1,3
+crude,Ridge,individual,us_return_lag0,-0.008212945249162128,0.016463681693160353,1,3
+crude,Ridge,individual,us_return_lag1,-0.03513008580624719,0.030571099646982215,1,3
+crude,Ridge,individual,us_shock_20,-0.013088120967985475,0.023858544455284698,2,3
+crude,Ridge,individual,us_shock_volume_interaction,-0.00829646918490336,0.04420281999563943,2,3
+crude,Ridge,individual,us_volatility_20,-0.1573354491997415,0.08649335373954302,1,3
+crude,Ridge,individual,us_volatility_5,0.03357299182547854,0.16048662091544832,2,3
+crude,Ridge,individual,us_volume_breakout_20,0.4175017912482648,0.11642167130353251,3,3
+crude,Ridge,individual,us_volume_breakout_ratio_20,-0.016963022179951746,0.03325916001064465,0,3
+crude,Ridge,individual,us_volume_relative_20,-0.02546764086053206,0.04504463709204064,0,3
+gold,Ensemble,group,Chinese features,1.2501396060687533,0.79136981156338,3,3
+gold,Ensemble,group,Cross-market features,0.4181861037732795,0.3081933104599402,3,3
+gold,Ensemble,group,US + cross-market,0.2798698421870524,0.5328909762628657,2,3
+gold,Ensemble,group,US features,-0.1451120440875373,0.43308468687293344,2,3
+gold,Ensemble,individual,cn_absolute_return,-0.030024228271257603,0.031003494667386573,0,3
+gold,Ensemble,individual,cn_constituent_count,0.0,0.0,0,3
+gold,Ensemble,individual,cn_largest_weight,0.0035457375513025468,0.020862221679491016,3,3
+gold,Ensemble,individual,cn_momentum_20,0.11360997117220073,0.07718144824908385,3,3
+gold,Ensemble,individual,cn_momentum_5,-0.01813057853311951,0.1509924520643185,1,3
+gold,Ensemble,individual,cn_oi_change_1,0.855764827464861,0.6078223025445034,2,3
+gold,Ensemble,individual,cn_oi_change_5,-0.035909535642994525,0.05746437537899096,1,3
+gold,Ensemble,individual,cn_positive_return_breadth,-0.039289043917132796,0.036373415260228095,1,3
+gold,Ensemble,individual,cn_return_lag0,0.001250554001854439,0.047205881871804585,1,3
+gold,Ensemble,individual,cn_return_lag1,-0.03688470667757133,0.04218454994688131,1,3
+gold,Ensemble,individual,cn_return_oi_interaction,-0.032463337220353286,0.17336154810462273,2,3
+gold,Ensemble,individual,cn_shock_20,-0.01847292709810246,0.038708375826964306,1,3
+gold,Ensemble,individual,cn_shock_volume_interaction,0.0018262824269545043,0.024014281298858443,2,3
+gold,Ensemble,individual,cn_turnover_breakout_20,0.016117426259902416,0.01724937551717584,2,3
+gold,Ensemble,individual,cn_turnover_breakout_ratio_20,0.03428894379545684,0.024102047580312473,2,3
+gold,Ensemble,individual,cn_turnover_relative_20,-0.040941012213290634,0.023259687624958628,0,3
+gold,Ensemble,individual,cn_volatility_20,0.024471912903807343,0.17441812065867715,2,3
+gold,Ensemble,individual,cn_volatility_5,0.07261200653106219,0.062234088336531004,2,3
+gold,Ensemble,individual,cn_volume_breakout_20,0.022745885713453384,0.0154872070626315,2,3
+gold,Ensemble,individual,cn_volume_breakout_ratio_20,0.04907464692120699,0.02775095454128757,3,3
+gold,Ensemble,individual,cn_volume_relative_20,-0.032915485852590805,0.027131174980718317,0,3
+gold,Ensemble,individual,cross_correlation_60,0.2572596593535502,0.19348274578799368,3,3
+gold,Ensemble,individual,cross_momentum_divergence_20,-0.010769115746775484,0.2342274268336047,2,3
+gold,Ensemble,individual,cross_sensitivity_60,0.14637028009406614,0.07255129739978175,3,3
+gold,Ensemble,individual,us_absolute_return,-0.03718983632065801,0.1379285559462251,1,3
+gold,Ensemble,individual,us_constituent_count,0.0011768130174332103,0.0012719710182552276,1,3
+gold,Ensemble,individual,us_largest_weight,0.03557748644303233,0.07240707820726229,2,3
+gold,Ensemble,individual,us_momentum_20,0.02292424699806279,0.08257070433115826,2,3
+gold,Ensemble,individual,us_momentum_5,-0.09247512949970474,0.13206239950119097,0,3
+gold,Ensemble,individual,us_positive_return_breadth,0.06197553848866001,0.06185851859342314,2,3
+gold,Ensemble,individual,us_return_lag0,0.009177498183958627,0.0707033044999187,2,3
+gold,Ensemble,individual,us_return_lag1,0.01872536400711696,0.09989922716946874,3,3
+gold,Ensemble,individual,us_shock_20,-0.022287779583186805,0.015506081984979556,1,3
+gold,Ensemble,individual,us_shock_volume_interaction,-0.037692125658156925,0.022735673741090832,0,3
+gold,Ensemble,individual,us_volatility_20,0.03489907084866649,0.06535537099297246,1,3
+gold,Ensemble,individual,us_volatility_5,-0.08320934012054632,0.06589297460104478,1,3
+gold,Ensemble,individual,us_volume_breakout_20,-0.03643565616322998,0.013548678936312246,1,3
+gold,Ensemble,individual,us_volume_breakout_ratio_20,-0.06978390443202964,0.1225331884499136,2,3
+gold,Ensemble,individual,us_volume_relative_20,-0.02153673182367701,0.07969537466317393,2,3
+gold,Gradient boosting,group,Chinese features,1.7232239799743827,0.8771447546290188,3,3
+gold,Gradient boosting,group,Cross-market features,0.49710646332126196,0.3674470978091675,2,3
+gold,Gradient boosting,group,US + cross-market,0.06324643979719109,0.5363581520162586,1,3
+gold,Gradient boosting,group,US features,-0.44126528992163616,0.2976674262293538,1,3
+gold,Gradient boosting,individual,cn_absolute_return,-0.020947530882954174,0.010376563723454793,0,3
+gold,Gradient boosting,individual,cn_constituent_count,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_largest_weight,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_momentum_20,0.08140024121300264,0.08369164679858883,2,3
+gold,Gradient boosting,individual,cn_momentum_5,-0.03269724827891968,0.314352447331253,0,3
+gold,Gradient boosting,individual,cn_oi_change_1,1.3044693974523551,0.7450534780035675,2,3
+gold,Gradient boosting,individual,cn_oi_change_5,-0.033435898563011344,0.08069183157618817,0,3
+gold,Gradient boosting,individual,cn_positive_return_breadth,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_return_lag0,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_return_lag1,0.01929873899009933,0.08699506300165204,1,3
+gold,Gradient boosting,individual,cn_return_oi_interaction,0.10852660676565595,0.10376257694357148,2,3
+gold,Gradient boosting,individual,cn_shock_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_shock_volume_interaction,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_turnover_breakout_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_turnover_breakout_ratio_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_turnover_relative_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_volatility_20,0.21824771760559045,0.25692300659318906,1,3
+gold,Gradient boosting,individual,cn_volatility_5,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_volume_breakout_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_volume_breakout_ratio_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,cn_volume_relative_20,-0.005176308614387189,0.014020831374363042,0,3
+gold,Gradient boosting,individual,cross_correlation_60,0.2305264462788089,0.22959814321917457,2,3
+gold,Gradient boosting,individual,cross_momentum_divergence_20,0.03219390730679822,0.28498482242181294,1,3
+gold,Gradient boosting,individual,cross_sensitivity_60,0.23473478935160044,0.1353025177672098,1,3
+gold,Gradient boosting,individual,us_absolute_return,-0.09926127496551954,0.13691471623304888,1,3
+gold,Gradient boosting,individual,us_constituent_count,0.0,0.0,0,3
+gold,Gradient boosting,individual,us_largest_weight,0.0,0.0,0,3
+gold,Gradient boosting,individual,us_momentum_20,-0.02131093125887296,0.022680705952048776,0,3
+gold,Gradient boosting,individual,us_momentum_5,-0.11953865192412443,0.09878124535461122,0,3
+gold,Gradient boosting,individual,us_positive_return_breadth,0.0,0.0,0,3
+gold,Gradient boosting,individual,us_return_lag0,0.01215791799969196,0.021780056645753706,2,3
+gold,Gradient boosting,individual,us_return_lag1,-0.009888589150790807,0.00873239304194185,0,3
+gold,Gradient boosting,individual,us_shock_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,us_shock_volume_interaction,0.0040038165261250935,0.018492209494124782,1,3
+gold,Gradient boosting,individual,us_volatility_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,us_volatility_5,-0.11657379598432704,0.12011063450234598,0,3
+gold,Gradient boosting,individual,us_volume_breakout_20,0.0,0.0,0,3
+gold,Gradient boosting,individual,us_volume_breakout_ratio_20,-0.11034112828700478,0.1510525468903423,0,3
+gold,Gradient boosting,individual,us_volume_relative_20,0.0,0.0,0,3
+gold,Random forest,group,Chinese features,1.739976563255442,1.174732858733994,3,3
+gold,Random forest,group,Cross-market features,0.3556968571300235,0.4331535089581691,2,3
+gold,Random forest,group,US + cross-market,0.3657865783871747,0.745648140059448,2,3
+gold,Random forest,group,US features,-0.02148273846080604,0.5929450147876488,2,3
+gold,Random forest,individual,cn_absolute_return,-0.030267994635731005,0.04368037717867798,2,3
+gold,Random forest,individual,cn_constituent_count,0.0,0.0,0,3
+gold,Random forest,individual,cn_largest_weight,0.008622685506820603,0.01254790788602185,2,3
+gold,Random forest,individual,cn_momentum_20,0.12688263719562465,0.048404883273476446,2,3
+gold,Random forest,individual,cn_momentum_5,0.0019726230057886124,0.0887669721381086,1,3
+gold,Random forest,individual,cn_oi_change_1,1.2534334004107983,1.0057319320769662,2,3
+gold,Random forest,individual,cn_oi_change_5,0.012686401303134403,0.03914160212898934,2,3
+gold,Random forest,individual,cn_positive_return_breadth,-0.017156464428830183,0.01582976049577081,0,3
+gold,Random forest,individual,cn_return_lag0,-0.0034344527047463326,0.04775604389259939,1,3
+gold,Random forest,individual,cn_return_lag1,-0.10806851214564761,0.058374526191560944,1,3
+gold,Random forest,individual,cn_return_oi_interaction,-0.21179225059751597,0.2729501968299961,2,3
+gold,Random forest,individual,cn_shock_20,-0.06260496534603736,0.05862349218185216,0,3
+gold,Random forest,individual,cn_shock_volume_interaction,-0.013135460455831286,0.045738819392648816,2,3
+gold,Random forest,individual,cn_turnover_breakout_20,0.0,0.0,0,3
+gold,Random forest,individual,cn_turnover_breakout_ratio_20,0.08921422667840356,0.052446984000232684,3,3
+gold,Random forest,individual,cn_turnover_relative_20,-0.06991006112866394,0.04627391942022184,0,3
+gold,Random forest,individual,cn_volatility_20,-0.153826943391889,0.1412655481835304,2,3
+gold,Random forest,individual,cn_volatility_5,0.04597595374202284,0.059562269234335115,1,3
+gold,Random forest,individual,cn_volume_breakout_20,0.0,0.0,0,3
+gold,Random forest,individual,cn_volume_breakout_ratio_20,0.12875961331665345,0.05360410819240584,3,3
+gold,Random forest,individual,cn_volume_relative_20,-0.04181010790873251,0.04620646871016963,1,3
+gold,Random forest,individual,cross_correlation_60,0.2583216648266139,0.28014804233551427,3,3
+gold,Random forest,individual,cross_momentum_divergence_20,-0.029134517957626983,0.3746827091184822,2,3
+gold,Random forest,individual,cross_sensitivity_60,0.08349132428199346,0.10128594056728119,2,3
+gold,Random forest,individual,us_absolute_return,0.0714650553462266,0.13648038341152283,2,3
+gold,Random forest,individual,us_constituent_count,-0.0017015814868522338,0.002047133861027415,0,3
+gold,Random forest,individual,us_largest_weight,-0.01290143480051666,0.006741515805880896,0,3
+gold,Random forest,individual,us_momentum_20,-0.04023820758844937,0.09699468506361883,1,3
+gold,Random forest,individual,us_momentum_5,-0.03926572123633808,0.18210046964266716,1,3
+gold,Random forest,individual,us_positive_return_breadth,0.019018498100448346,0.02907501269571648,1,3
+gold,Random forest,individual,us_return_lag0,-0.033483098303425864,0.09459354198929286,1,3
+gold,Random forest,individual,us_return_lag1,0.0827021975077951,0.2003312084962428,3,3
+gold,Random forest,individual,us_shock_20,-0.04234383761998601,0.02686413192101471,1,3
+gold,Random forest,individual,us_shock_volume_interaction,-0.08274196294204415,0.02540133517501095,0,3
+gold,Random forest,individual,us_volatility_20,0.04255044078043592,0.04152969057043038,1,3
+gold,Random forest,individual,us_volatility_5,-0.030464348177173427,0.07754752818558984,1,3
+gold,Random forest,individual,us_volume_breakout_20,0.016272755416210923,0.008240443479222976,1,3
+gold,Random forest,individual,us_volume_breakout_ratio_20,-0.055791607130186695,0.12825089623375463,1,3
+gold,Random forest,individual,us_volume_relative_20,-0.06835801311410512,0.14698053437413466,1,3
+gold,Ridge,group,Chinese features,0.22646789126345346,0.6146190305862844,2,3
+gold,Ridge,group,Cross-market features,0.4323690644031358,0.16797092005726147,3,3
+gold,Ridge,group,US + cross-market,0.3805117966473847,0.4066978517409175,2,3
+gold,Ridge,group,US features,0.06382143138101862,0.4494243057334548,1,3
+gold,Ridge,individual,cn_absolute_return,-0.025140382272728534,0.05632897746395058,0,3
+gold,Ridge,individual,cn_constituent_count,0.0,0.0,0,3
+gold,Ridge,individual,cn_largest_weight,0.0011314695460188373,0.05449791135255263,2,3
+gold,Ridge,individual,cn_momentum_20,0.13550517130791478,0.174898180316567,3,3
+gold,Ridge,individual,cn_momentum_5,-0.02715775939358145,0.09366412271485147,2,3
+gold,Ridge,individual,cn_oi_change_1,0.036426740617549726,0.12722579475773593,2,3
+gold,Ridge,individual,cn_oi_change_5,-0.06808146989357451,0.0744987045123921,1,3
+gold,Ridge,individual,cn_positive_return_breadth,-0.09842402863162032,0.10337167632246377,1,3
+gold,Ridge,individual,cn_return_lag0,-0.00043881959481162705,0.1333942934545732,2,3
+gold,Ridge,individual,cn_return_lag1,-0.023852391159940863,0.062256854490308336,1,3
+gold,Ridge,individual,cn_return_oi_interaction,-0.06984859565450739,0.2906970002128378,1,3
+gold,Ridge,individual,cn_shock_20,-0.007103831381046725,0.06988036590725889,2,3
+gold,Ridge,individual,cn_shock_volume_interaction,-0.0003223765554129515,0.03606252501413788,1,3
+gold,Ridge,individual,cn_turnover_breakout_20,0.052609253670082914,0.05315227949991064,2,3
+gold,Ridge,individual,cn_turnover_breakout_ratio_20,0.012331995038400613,0.031262053334658174,1,3
+gold,Ridge,individual,cn_turnover_relative_20,-0.06092759499614575,0.0414012464921315,0,3
+gold,Ridge,individual,cn_volatility_20,-0.00905866550438395,0.16355863502246692,2,3
+gold,Ridge,individual,cn_volatility_5,0.1735167952226561,0.1305116904599111,3,3
+gold,Ridge,individual,cn_volume_breakout_20,0.07357112023049947,0.04738694878124251,2,3
+gold,Ridge,individual,cn_volume_breakout_ratio_20,0.016330165114931995,0.03765033572472137,1,3
+gold,Ridge,individual,cn_volume_relative_20,-0.0565182100439807,0.03993399384198897,0,3
+gold,Ridge,individual,cross_correlation_60,0.26937877735960236,0.09417056642224414,3,3
+gold,Ridge,individual,cross_momentum_divergence_20,-0.012644073766331861,0.05920541151785876,1,3
+gold,Ridge,individual,cross_sensitivity_60,0.13162425587680063,0.04422692331679577,3,3
+gold,Ridge,individual,us_absolute_return,-0.09365172814237707,0.1751710812683431,1,3
+gold,Ridge,individual,us_constituent_count,0.005136348495764294,0.004209361216385084,1,3
+gold,Ridge,individual,us_largest_weight,0.15658520362341755,0.21170080399480126,2,3
+gold,Ridge,individual,us_momentum_20,0.11745803324260615,0.1370284651614507,3,3
+gold,Ridge,individual,us_momentum_5,-0.11656825054076747,0.1515637002787665,0,3
+gold,Ridge,individual,us_positive_return_breadth,0.17984191313580555,0.15607754468178411,2,3
+gold,Ridge,individual,us_return_lag0,0.04055114803318123,0.1105638665977736,1,3
+gold,Ridge,individual,us_return_lag1,-0.01247677199883835,0.10161414250719501,2,3
+gold,Ridge,individual,us_shock_20,-0.03078042840301099,0.04085254229247285,2,3
+gold,Ridge,individual,us_shock_volume_interaction,-0.02847896244389353,0.07391209184813852,1,3
+gold,Ridge,individual,us_volatility_20,0.07519526015152171,0.18790208811379883,1,3
+gold,Ridge,individual,us_volatility_5,-0.10250691181894148,0.04034210015614957,0,3
+gold,Ridge,individual,us_volume_breakout_20,-0.12076997306462212,0.04325846698855674,1,3
+gold,Ridge,individual,us_volume_breakout_ratio_20,-0.05334865627235351,0.09865704784928132,2,3
+gold,Ridge,individual,us_volume_relative_20,-0.011255150836932227,0.10630936575947186,2,3
+soybeans,Ensemble,group,Chinese features,0.0054363246970875355,0.6304583280903031,1,3
+soybeans,Ensemble,group,Cross-market features,0.4513721315985989,0.6352282466389908,2,3
+soybeans,Ensemble,group,US + cross-market,-0.5406497888774362,0.7544549640792194,1,3
+soybeans,Ensemble,group,US features,-0.9747174688391317,0.8747928384155772,1,3
+soybeans,Ensemble,individual,cn_absolute_return,-0.20634176067956672,0.13808058471024176,2,3
+soybeans,Ensemble,individual,cn_constituent_count,-0.02977400417919593,0.01720623091799512,1,3
+soybeans,Ensemble,individual,cn_largest_weight,-0.06509252597253155,0.026748155172744422,1,3
+soybeans,Ensemble,individual,cn_momentum_20,-0.013040297537709581,0.061722118069480775,1,3
+soybeans,Ensemble,individual,cn_momentum_5,-0.06517340591858503,0.01545995136111419,1,3
+soybeans,Ensemble,individual,cn_oi_change_1,0.10327133046992461,0.17714930985501434,3,3
+soybeans,Ensemble,individual,cn_oi_change_5,0.0725592802098772,0.11939981591193169,2,3
+soybeans,Ensemble,individual,cn_positive_return_breadth,-0.011658065887466929,0.014224072807259845,0,3
+soybeans,Ensemble,individual,cn_return_lag0,-0.04918416575781378,0.08165358369950697,2,3
+soybeans,Ensemble,individual,cn_return_lag1,0.01730563191740351,0.090873112194601,1,3
+soybeans,Ensemble,individual,cn_return_oi_interaction,0.17655669311060682,0.21985691645386335,3,3
+soybeans,Ensemble,individual,cn_shock_20,0.006816535305557721,0.09695368957073598,2,3
+soybeans,Ensemble,individual,cn_shock_volume_interaction,0.004364562076686745,0.15152720338936937,2,3
+soybeans,Ensemble,individual,cn_turnover_breakout_20,-0.013824994902393861,0.02861508537898351,1,3
+soybeans,Ensemble,individual,cn_turnover_breakout_ratio_20,0.011275350112628013,0.026139054121912402,2,3
+soybeans,Ensemble,individual,cn_turnover_relative_20,-0.004842334064701434,0.009901152245386876,1,3
+soybeans,Ensemble,individual,cn_volatility_20,-0.17417954883281112,0.09897651909179782,0,3
+soybeans,Ensemble,individual,cn_volatility_5,0.007232217799602944,0.03532562642233277,3,3
+soybeans,Ensemble,individual,cn_volume_breakout_20,-0.01660801492135363,0.029780920160774153,0,3
+soybeans,Ensemble,individual,cn_volume_breakout_ratio_20,-0.0370515155967142,0.06154463631896034,1,3
+soybeans,Ensemble,individual,cn_volume_relative_20,0.0021238451393284165,0.013613863558664093,2,3
+soybeans,Ensemble,individual,cross_correlation_60,0.02908253503909646,0.024994235094219955,2,3
+soybeans,Ensemble,individual,cross_momentum_divergence_20,0.32145949789571937,0.6189060509209043,2,3
+soybeans,Ensemble,individual,cross_sensitivity_60,0.023911827991634604,0.02101639814050558,2,3
+soybeans,Ensemble,individual,us_absolute_return,-0.015353873066602408,0.042404749309815463,1,3
+soybeans,Ensemble,individual,us_constituent_count,0.0,0.0,0,3
+soybeans,Ensemble,individual,us_largest_weight,0.10560005988231395,0.07092417892590311,3,3
+soybeans,Ensemble,individual,us_momentum_20,-0.01066699493827936,0.07898943750760573,1,3
+soybeans,Ensemble,individual,us_momentum_5,0.023963635915019696,0.10527753255675833,1,3
+soybeans,Ensemble,individual,us_positive_return_breadth,0.008924767951144217,0.010947094086354007,3,3
+soybeans,Ensemble,individual,us_return_lag0,0.0038316210530141407,0.027024494384814156,2,3
+soybeans,Ensemble,individual,us_return_lag1,-0.39878970932694185,0.3271601167485378,1,3
+soybeans,Ensemble,individual,us_shock_20,0.003839054601315728,0.015927180436944934,1,3
+soybeans,Ensemble,individual,us_shock_volume_interaction,0.015011337451268392,0.04175354846276979,1,3
+soybeans,Ensemble,individual,us_volatility_20,-0.3333174375965102,0.5589952631660757,2,3
+soybeans,Ensemble,individual,us_volatility_5,0.02911637121716575,0.04171342965278747,3,3
+soybeans,Ensemble,individual,us_volume_breakout_20,-0.07653233542853138,0.011001440483918143,1,3
+soybeans,Ensemble,individual,us_volume_breakout_ratio_20,-0.1381648310372557,0.07311745894149373,1,3
+soybeans,Ensemble,individual,us_volume_relative_20,-0.2688441981487678,0.13030017498527807,1,3
+soybeans,Gradient boosting,group,Chinese features,-0.1691202573668733,0.6863267688990057,1,3
+soybeans,Gradient boosting,group,Cross-market features,0.10152693426523789,0.8066396198124774,2,3
+soybeans,Gradient boosting,group,US + cross-market,-1.7196573619978295,0.7014020505800995,1,3
+soybeans,Gradient boosting,group,US features,-1.7200900744090297,0.9806513192150973,0,3
+soybeans,Gradient boosting,individual,cn_absolute_return,-0.23728116591056478,0.11169477537456146,0,3
+soybeans,Gradient boosting,individual,cn_constituent_count,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_largest_weight,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_momentum_20,-0.04075057868825147,0.044832280224107325,0,3
+soybeans,Gradient boosting,individual,cn_momentum_5,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_oi_change_1,0.0770960955333508,0.12701592604496634,2,3
+soybeans,Gradient boosting,individual,cn_oi_change_5,0.1973973333551248,0.2403742703752204,2,3
+soybeans,Gradient boosting,individual,cn_positive_return_breadth,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_return_lag0,-0.11548822727755645,0.09043757805746862,0,3
+soybeans,Gradient boosting,individual,cn_return_lag1,0.00022290402031450822,0.016496602684247238,1,3
+soybeans,Gradient boosting,individual,cn_return_oi_interaction,0.04901369755402707,0.2907333325885591,2,3
+soybeans,Gradient boosting,individual,cn_shock_20,-0.08610552021947074,0.12301486463578734,1,3
+soybeans,Gradient boosting,individual,cn_shock_volume_interaction,0.09917859849382336,0.3251927339131281,1,3
+soybeans,Gradient boosting,individual,cn_turnover_breakout_20,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_turnover_breakout_ratio_20,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_turnover_relative_20,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_volatility_20,-0.20280552663332316,0.12173209551142837,1,3
+soybeans,Gradient boosting,individual,cn_volatility_5,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_volume_breakout_20,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cn_volume_breakout_ratio_20,-0.06258746169536025,0.11136174328243563,0,3
+soybeans,Gradient boosting,individual,cn_volume_relative_20,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cross_correlation_60,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,cross_momentum_divergence_20,0.10152693426523789,0.8066396198124774,2,3
+soybeans,Gradient boosting,individual,cross_sensitivity_60,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_absolute_return,-0.02229990507633343,0.07266886028024752,1,3
+soybeans,Gradient boosting,individual,us_constituent_count,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_largest_weight,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_momentum_20,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_momentum_5,-0.05712502849177026,0.03624944591070327,0,3
+soybeans,Gradient boosting,individual,us_positive_return_breadth,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_return_lag0,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_return_lag1,-0.7318016230419256,0.48101125981105813,0,3
+soybeans,Gradient boosting,individual,us_shock_20,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_shock_volume_interaction,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_volatility_20,-0.5061909592418723,0.6289560421153865,0,3
+soybeans,Gradient boosting,individual,us_volatility_5,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_volume_breakout_20,0.0,0.0,0,3
+soybeans,Gradient boosting,individual,us_volume_breakout_ratio_20,-0.0976417877734253,0.046386624727601175,1,3
+soybeans,Gradient boosting,individual,us_volume_relative_20,-0.4298532653217283,0.22886431361832213,1,3
+soybeans,Random forest,group,Chinese features,0.17742970718356935,0.820451855231919,2,3
+soybeans,Random forest,group,Cross-market features,0.7806948813908317,0.8699290053513355,3,3
+soybeans,Random forest,group,US + cross-market,-0.3919785089054259,1.000094372684729,1,3
+soybeans,Random forest,group,US features,-0.9984300682554093,1.2074160318800278,1,3
+soybeans,Random forest,individual,cn_absolute_return,0.02560652074828316,0.11090901170384561,2,3
+soybeans,Random forest,individual,cn_constituent_count,-0.005888375302035853,0.004401290529226201,0,3
+soybeans,Random forest,individual,cn_largest_weight,-0.19324823917743103,0.06962784117273861,0,3
+soybeans,Random forest,individual,cn_momentum_20,0.047258710084949196,0.12282989619887928,1,3
+soybeans,Random forest,individual,cn_momentum_5,-0.15190406579332294,0.06619908725811242,1,3
+soybeans,Random forest,individual,cn_oi_change_1,0.11405504011972005,0.15369907661594537,2,3
+soybeans,Random forest,individual,cn_oi_change_5,0.04347983560408528,0.0742265245609969,2,3
+soybeans,Random forest,individual,cn_positive_return_breadth,0.03182580841471894,0.026112833854380513,2,3
+soybeans,Random forest,individual,cn_return_lag0,-0.05000853675767891,0.10538668901154026,2,3
+soybeans,Random forest,individual,cn_return_lag1,0.018212540409228567,0.13042198010248773,1,3
+soybeans,Random forest,individual,cn_return_oi_interaction,0.14449407324783248,0.25403009202995974,2,3
+soybeans,Random forest,individual,cn_shock_20,0.06932283173178846,0.17479068851899,2,3
+soybeans,Random forest,individual,cn_shock_volume_interaction,-0.09875551374696545,0.1515535054056617,1,3
+soybeans,Random forest,individual,cn_turnover_breakout_20,-0.00589678492836311,0.009897804836768566,0,3
+soybeans,Random forest,individual,cn_turnover_breakout_ratio_20,-0.007932664299536697,0.06507305807950754,2,3
+soybeans,Random forest,individual,cn_turnover_relative_20,-0.014228221553508738,0.030057478111007913,1,3
+soybeans,Random forest,individual,cn_volatility_20,-0.21088339136510986,0.06956590089660274,0,3
+soybeans,Random forest,individual,cn_volatility_5,-0.04756888087167398,0.0737189183116599,1,3
+soybeans,Random forest,individual,cn_volume_breakout_20,-0.013099344089558268,0.0092225908220962,0,3
+soybeans,Random forest,individual,cn_volume_breakout_ratio_20,-0.07364023800112912,0.06365257100276012,1,3
+soybeans,Random forest,individual,cn_volume_relative_20,0.0026499457574024553,0.042133236241159944,1,3
+soybeans,Random forest,individual,cross_correlation_60,0.02838340989372633,0.046500586902139276,1,3
+soybeans,Random forest,individual,cross_momentum_divergence_20,0.7280743651390889,0.8521614100278504,3,3
+soybeans,Random forest,individual,cross_sensitivity_60,-0.020222163697415037,0.04680101050509862,1,3
+soybeans,Random forest,individual,us_absolute_return,-0.021651391294262072,0.07339110285231162,2,3
+soybeans,Random forest,individual,us_constituent_count,0.0,0.0,0,3
+soybeans,Random forest,individual,us_largest_weight,0.07487498716640589,0.06866251245853429,2,3
+soybeans,Random forest,individual,us_momentum_20,-0.06003290699610412,0.1231554611029604,1,3
+soybeans,Random forest,individual,us_momentum_5,0.022955581659708266,0.09262736496849172,2,3
+soybeans,Random forest,individual,us_positive_return_breadth,0.0,0.0,0,3
+soybeans,Random forest,individual,us_return_lag0,0.0060925885342546105,0.030833200528867875,2,3
+soybeans,Random forest,individual,us_return_lag1,-0.3526592134905632,0.32021931265921166,1,3
+soybeans,Random forest,individual,us_shock_20,0.014389212987842459,0.013877794134118758,2,3
+soybeans,Random forest,individual,us_shock_volume_interaction,-0.040939039831804226,0.0528670693558065,1,3
+soybeans,Random forest,individual,us_volatility_20,-0.3912357800909976,0.9119746303802894,2,3
+soybeans,Random forest,individual,us_volatility_5,0.07766054307348365,0.08651646272310705,3,3
+soybeans,Random forest,individual,us_volume_breakout_20,0.0,0.0,0,3
+soybeans,Random forest,individual,us_volume_breakout_ratio_20,-0.14544077785017645,0.11530207521585152,1,3
+soybeans,Random forest,individual,us_volume_relative_20,-0.2055032814010808,0.12709225108056485,0,3
+soybeans,Ridge,group,Chinese features,0.019306430809869584,0.498542788101534,2,3
+soybeans,Ridge,group,Cross-market features,0.5473658602733116,0.33989082670523063,3,3
+soybeans,Ridge,group,US + cross-market,0.5614019209538362,0.6976542520530448,2,3
+soybeans,Ridge,group,US features,-0.1073658733154074,0.6616857912498767,2,3
+soybeans,Ridge,individual,cn_absolute_return,-0.36161021908753577,0.21463719518865534,1,3
+soybeans,Ridge,individual,cn_constituent_count,-0.07166370433960634,0.04562347772389195,1,3
+soybeans,Ridge,individual,cn_largest_weight,-0.013388060538387725,0.015342803200487977,1,3
+soybeans,Ridge,individual,cn_momentum_20,-0.02838412661854125,0.08143585587835037,1,3
+soybeans,Ridge,individual,cn_momentum_5,-0.02888025786837215,0.03470131513756443,2,3
+soybeans,Ridge,individual,cn_oi_change_1,0.049618987145521494,0.28694966048859444,2,3
+soybeans,Ridge,individual,cn_oi_change_5,-0.01838816499824483,0.08985741265814014,1,3
+soybeans,Ridge,individual,cn_positive_return_breadth,-0.05243891988215502,0.044763461271905065,0,3
+soybeans,Ridge,individual,cn_return_lag0,0.019935298649541057,0.08875139913324044,2,3
+soybeans,Ridge,individual,cn_return_lag1,0.031609618155435726,0.15800090163026062,1,3
+soybeans,Ridge,individual,cn_return_oi_interaction,0.25380031569161526,0.18794264255569734,3,3
+soybeans,Ridge,individual,cn_shock_20,0.033950696014187265,0.040019742778832176,2,3
+soybeans,Ridge,individual,cn_shock_volume_interaction,0.02676428218424267,0.031976026629340876,2,3
+soybeans,Ridge,individual,cn_turnover_breakout_20,-0.032094576340322735,0.07755094548166802,1,3
+soybeans,Ridge,individual,cn_turnover_breakout_ratio_20,0.04212829115755644,0.036972714059523286,3,3
+soybeans,Ridge,individual,cn_turnover_relative_20,0.00230361012061758,0.023769017657549168,2,3
+soybeans,Ridge,individual,cn_volatility_20,-0.10465641349840604,0.1808760527617515,1,3
+soybeans,Ridge,individual,cn_volatility_5,0.07533322149527584,0.06340692870492631,2,3
+soybeans,Ridge,individual,cn_volume_breakout_20,-0.03251264106328507,0.08411784825559238,1,3
+soybeans,Ridge,individual,cn_volume_breakout_ratio_20,0.03357599148286021,0.030660799308103295,3,3
+soybeans,Ridge,individual,cn_volume_relative_20,0.0066190210386132126,0.022794873855977338,2,3
+soybeans,Ridge,individual,cross_correlation_60,0.04991105875396655,0.06721168048675454,2,3
+soybeans,Ridge,individual,cross_momentum_divergence_20,0.24840295616158045,0.27796969833062474,2,3
+soybeans,Ridge,individual,cross_sensitivity_60,0.08596569234517944,0.06394282780219857,3,3
+soybeans,Ridge,individual,us_absolute_return,0.004802894501984769,0.02379812800849645,2,3
+soybeans,Ridge,individual,us_constituent_count,0.0,0.0,0,3
+soybeans,Ridge,individual,us_largest_weight,0.2607547952146443,0.15277046374437553,3,3
+soybeans,Ridge,individual,us_momentum_20,0.05311741425429992,0.1255308657890361,3,3
+soybeans,Ridge,individual,us_momentum_5,0.14767208015419805,0.2032005549832984,3,3
+soybeans,Ridge,individual,us_positive_return_breadth,0.02257592351818699,0.033469837699433236,3,3
+soybeans,Ridge,individual,us_return_lag0,-0.00610525713680162,0.06279801607502737,1,3
+soybeans,Ridge,individual,us_return_lag1,-0.12334655154272604,0.23290537827615476,1,3
+soybeans,Ridge,individual,us_shock_20,-0.0064468553539616,0.039333187903865974,1,3
+soybeans,Ridge,individual,us_shock_volume_interaction,0.08022603908569868,0.11199637039212292,2,3
+soybeans,Ridge,individual,us_volatility_20,-0.09584814074041313,0.17349028831378024,2,3
+soybeans,Ridge,individual,us_volatility_5,0.013182299696037897,0.040755607795132244,3,3
+soybeans,Ridge,individual,us_volume_breakout_20,-0.22576812370411864,0.031021842032178597,1,3
+soybeans,Ridge,individual,us_volume_breakout_ratio_20,-0.1712911469025104,0.09556726957214487,1,3
+soybeans,Ridge,individual,us_volume_relative_20,-0.1827510447183758,0.06481853017419258,1,3

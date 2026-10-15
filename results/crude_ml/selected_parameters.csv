@@ -1,0 +1,10 @@
+model,feature_set,input_features,best_cv_mse,best_params
+Ridge,domestic,21,0.00020495571187063375,"{""model__alpha"": 1000.0}"
+Random forest,domestic,21,0.00020802428261749084,"{""model__max_depth"": 3, ""model__max_features"": 0.7, ""model__min_samples_leaf"": 10}"
+Gradient boosting,domestic,21,0.00020522156829236174,"{""model__learning_rate"": 0.03, ""model__max_depth"": 1, ""model__n_estimators"": 100}"
+Ridge,domestic_us,36,0.00020480349343718124,"{""model__alpha"": 1000.0}"
+Random forest,domestic_us,36,0.00020674790585309096,"{""model__max_depth"": 3, ""model__max_features"": 0.7, ""model__min_samples_leaf"": 10}"
+Gradient boosting,domestic_us,36,0.00020493721556548864,"{""model__learning_rate"": 0.03, ""model__max_depth"": 1, ""model__n_estimators"": 100}"
+Ridge,domestic_us_cross,39,0.00020502663956795944,"{""model__alpha"": 1000.0}"
+Random forest,domestic_us_cross,39,0.00020662653523568814,"{""model__max_depth"": 3, ""model__max_features"": 0.7, ""model__min_samples_leaf"": 10}"
+Gradient boosting,domestic_us_cross,39,0.00020506675283594731,"{""model__learning_rate"": 0.03, ""model__max_depth"": 1, ""model__n_estimators"": 100}"
